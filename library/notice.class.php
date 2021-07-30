@@ -30,6 +30,13 @@
             return $dbc->getQuery("SELECT create_notice('".$this->title."', '".$this->header."', '".$this->text."', ".$this->category.", ".$this->channel.", ".$this->status.", ".$this->author.") AS `Message`;");
         }
 
+        /*-- ?action=editNotice&id=&title=&header=&text=&category=&channel=&author= --*/
+        public function editNotice(){
+            echo "SELECT edit_notice(".$this->id.", '".$this->title."', '".$this->header."', '".$this->text."', ".$this->category.", ".$this->channel.", ".$this->author.") AS `Message`;";
+            $dbc = new PDOClass();
+            return $dbc->getQuery("SELECT edit_notice(".$this->id.", '".$this->title."', '".$this->header."', '".$this->text."', ".$this->category.", ".$this->channel.", ".$this->author.") AS `Message`;");
+        }
+
         /*-- ?action=deleteNotice&id=&author= --*/
         public function deleteNotice(){
             $dbc = new PDOClass();
