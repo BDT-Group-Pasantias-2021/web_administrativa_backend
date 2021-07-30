@@ -14,32 +14,46 @@
 
     class searchAction{
         
+        /* USERS FUNCTIONS */
+        
         function getRankUser($dataGet){
-        $actionClass = new userClass( $dataGet['email'], $dataGet['password']);
+            $actionClass = new userClass( $dataGet['email'], $dataGet['password']);
             return $actionClass->getRankUser();
         }
         
         function passRecovery($dataGet){
-        $actionClass = new userClass( $dataGet['email']);
+            $actionClass = new userClass( $dataGet['email']);
             return $actionClass->passRecovery();
         }
 
-        function deleteReaction($dataGet){
+        /* COMMENTS FUNCTIONS */
         
+        function deleteReaction($dataGet){
             $actionClass = new commentClass( $dataGet['idReaction']);
             return $actionClass->deleteReaction();
         }
+
+        /* NOTICES FUNCTIONS */
+
+        function createNotice($dataGet){
+            $actionClass = new noticeClass($dataGet[''], $dataGet['title'], $dataGet['header'], $dataGet['text'], $dataGet['category'], $dataGet['channel'], $dataGet['status'], $dataGet['author']);
+            return $actionClass->createNotice();
+        }
     }
+    
 
     switch($actionGet){
         case "getRankUser":
             $dataReturn = $searchAction->getRankUser($dataGet);
             break;
+        case "passRecovery":
+            $dataReturn = $searchAction->passRecovery($dataGet);
+            break;
         case "deleteReaction":
             $dataReturn = $searchAction->deleteReaction($dataGet);
             break;
-        case "passRecovery":
-            $dataReturn = $searchAction->passRecovery($dataGet);
+        case "createNotice":
+            $dataReturn = $searchAction->createNotice($dataGet);
             break;
     }
 
