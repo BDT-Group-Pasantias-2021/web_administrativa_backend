@@ -29,5 +29,11 @@
             $dbc = new PDOClass();
             return $dbc->getQuery("SELECT create_notice('".$this->title."', '".$this->header."', '".$this->text."', ".$this->category.", ".$this->channel.", ".$this->status.", ".$this->author.") AS `Message`;");
         }
+
+        /*-- ?action=deleteNotice&id=&author= --*/
+        public function deleteNotice(){
+            $dbc = new PDOClass();
+            return $dbc->getQuery("SELECT delete_notice('".$this->title."', ".$this->author.") AS `Message`;");
+        }
     }
 ?>

@@ -39,6 +39,11 @@
             $actionClass = new noticeClass($dataGet[''], $dataGet['title'], $dataGet['header'], $dataGet['text'], $dataGet['category'], $dataGet['channel'], $dataGet['status'], $dataGet['author']);
             return $actionClass->createNotice();
         }
+
+        function deleteNotice($dataGet){
+            $actionClass = new noticeClass($dataGet[''], $dataGet['id'], $dataGet['author']);
+            return $actionClass->deleteNotice();
+        }
     }
     
 
@@ -54,6 +59,9 @@
             break;
         case "createNotice":
             $dataReturn = $searchAction->createNotice($dataGet);
+            break;
+        case "deleteNotice":
+            $dataReturn = $searchAction->deleteNotice($dataGet);
             break;
     }
 
