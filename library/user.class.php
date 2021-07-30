@@ -16,6 +16,13 @@
             $dbc = new PDOClass();
             return $dbc->getQuery("SELECT verify_rank_user('".$this->email."', '".$this->password."') AS `Message`;");
         }
+        
+        /*-- ?action=passRecovery&email= --*/
+        public function passRecovery(){ 
+            $dbc = new PDOClass();
+            return $dbc->getQuery("SELECT pass_recovery('".$this->email."') AS `Message`;");
+        }
+
 
     }
 

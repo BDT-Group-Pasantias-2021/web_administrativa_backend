@@ -18,6 +18,11 @@
         $actionClass = new userClass( $dataGet['email'], $dataGet['password']);
             return $actionClass->getRankUser();
         }
+        
+        function passRecovery($dataGet){
+        $actionClass = new userClass( $dataGet['email']);
+            return $actionClass->passRecovery();
+        }
 
         function deleteReaction($dataGet){
         
@@ -32,6 +37,9 @@
             break;
         case "deleteReaction":
             $dataReturn = $searchAction->deleteReaction($dataGet);
+            break;
+        case "passRecovery":
+            $dataReturn = $searchAction->passRecovery($dataGet);
             break;
     }
 
