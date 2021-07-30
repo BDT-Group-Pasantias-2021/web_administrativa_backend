@@ -29,8 +29,13 @@
         /* COMMENTS FUNCTIONS */
         
         function deleteReaction($dataGet){
-            $actionClass = new commentClass( $dataGet['idReaction']);
+            $actionClass = new commentClass( $dataGet['idReaction'], 0, 0, "");
             return $actionClass->deleteReaction();
+        }
+
+        function createComment($dataGet){
+            $actionClass = new commentClass( 0, $dataGet['author'], $dataGet['notice'], $dataGet['text'] );
+            return $actionClass->createComment();
         }
 
         /* NOTICES FUNCTIONS */
@@ -56,6 +61,9 @@
             break;
         case "deleteReaction":
             $dataReturn = $searchAction->deleteReaction($dataGet);
+            break;
+        case "createComment":
+            $dataReturn = $searchAction->createComment($dataGet);
             break;
         case "createNotice":
             $dataReturn = $searchAction->createNotice($dataGet);
