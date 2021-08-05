@@ -19,6 +19,12 @@
 | editComment    | ?action=editComment&idComment=&author=&text=                      |
 | deleteComment  | ?action=deleteComment&idComment=&author=                          |
 
+| Stored Procedure          | URL                                             |
+| ------------------------- | ----------------------------------------------- |
+| searchCommentByAuthor     | ?action=searchCommentByAuthor&author=           |
+| searchCommentByNotice     | ?action=searchCommentByNotice&author= |
+
+
 ## Notice Class
 
 | Function         | URL                                                                          |
@@ -28,7 +34,7 @@
 | editNoticeStatus | ?action=editNotice&id=&status=                                               |
 | deleteNotice     | ?action=deleteNotice&id=&author=                                             |
 
-| Store Procedure          | URL                                             |
+| Stored Procedure          | URL                                             |
 | ------------------------ | ----------------------------------------------- |
 | generalNoticeSearch      | ?action=generalNoticeSearch&campo=&valor=       |
 | searchActiveNotification | ?action=searchActiveNotification&campo=&status= |

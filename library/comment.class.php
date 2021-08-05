@@ -49,5 +49,17 @@
             return $dbc->getQuery("SELECT delete_comment(".$this->idComment.", ".$this->author.") AS Message;");
         } 
 
+        /*-- ?action=searchCommentByAuthor&author= --*/
+        public function searchCommentByAuthor($author){
+            $dbc = new PDOClass();
+            return $dbc->getQuery("CALL web_administra.search_comment_by_author(".$author.");");
+        }
+
+        /*-- ?action=searchCommentByNotice&notice= --*/
+        public function searchCommentByNotice($notice){
+            $dbc = new PDOClass();
+            return $dbc->getQuery("CALL web_administra.search_comment_by_notice(".$notice.");");
+        }
+
     }
 ?>

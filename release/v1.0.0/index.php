@@ -49,7 +49,6 @@
             $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], "", 0, 0, "", 0, 0, $dataGet['confirmPassword'],$dataGet['newConfirmPassword']);
             return $actionClass->changePassword();
         }
-        
 
 
         /* COMMENTS FUNCTIONS */
@@ -99,6 +98,18 @@
         function deleteNotice($dataGet){
             $actionClass = new noticeClass($dataGet['id'], $dataGet['title'], $dataGet['header'], $dataGet['text'], $dataGet['category'], $dataGet['channel'], $dataGet['status'], $dataGet['author']);
             return $actionClass->deleteNotice();
+        }
+
+        /* COMMENTS STORED PROCEDURES */
+
+        function searchCommentByAuthor($dataGet){
+            $actionClass = new commentClass(0, 0, 0, "", 0, 0, "");
+            return $actionClass->searchCommentByAuthor($dataGet['author']);
+        }
+
+        function searchCommentByNotice($dataGet){
+            $actionClass = new commentClass(0, 0, 0, "", 0, 0, "");
+            return $actionClass->searchCommentByNotice($dataGet['notice']);
         }
 
         /* USER STORED PROCEDURES */
@@ -202,6 +213,12 @@
             break;
         case "textNoticeSearch":
             $dataReturn = $searchAction->textNoticeSearch($dataGet);
+            break;
+        case "searchCommentByAuthor":
+            $dataReturn = $searchAction->searchCommentByAuthor($dataGet);
+            break;
+        case "searchCommentByNotice":
+            $dataReturn = $searchAction->searchCommentByNotice($dataGet);
             break;
     }
 
