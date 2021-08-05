@@ -82,7 +82,22 @@
     }
 
     $dataReturn = utf8_ansi(json_encode($dataReturn));
-
-    echo $dataReturn;
-    
 ?>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/favicon.png">
+    <title>Pasantías - BDT 2021</title>
+</head>
+</head>
+<body>
+    <div style="display: flex; align-items: center;">
+        <h2 style="display:inline-block; padding-right: 10px;">¡Hola de nuevo!</h2>
+        <img src="https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand.gif">
+    </div>
+    <div><?php echo $dataReturn;?></div>    
+</body>
+</html>
