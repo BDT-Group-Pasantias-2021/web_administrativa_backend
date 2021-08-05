@@ -9,4 +9,7 @@
 
 ## Notice Class
 
-//createNotice -> ?action=deleteNotice&id=&author=
+//createNotice -> ?action=createNotice&title=&header=&text=&category=&channel=&status=&author=
+//editNotice -> ?action=editNotice&id=&title=&header=&text=&category=&channel=&author=
+//editNoticeStatus -> ?action=editNotice&id=&status=
+//deleteNotice -> ?action=deleteNotice&id=&author=

@@ -41,17 +41,22 @@
         /* NOTICES FUNCTIONS */
 
         function createNotice($dataGet){
-            $actionClass = new noticeClass($dataGet[''], $dataGet['title'], $dataGet['header'], $dataGet['text'], $dataGet['category'], $dataGet['channel'], $dataGet['status'], $dataGet['author']);
+            $actionClass = new noticeClass($dataGet['id'], $dataGet['title'], $dataGet['header'], $dataGet['text'], $dataGet['category'], $dataGet['channel'], $dataGet['status'], $dataGet['author']);
             return $actionClass->createNotice();
         }
-
+        
         function editNotice($dataGet){
-            $actionClass = new noticeClass($dataGet[''], $dataGet['id'], $dataGet['title'], $dataGet['header'], $dataGet['text'], $dataGet['category'], $dataGet['channel'], $dataGet['author']);
+            $actionClass = new noticeClass($dataGet['id'], $dataGet['title'], $dataGet['header'], $dataGet['text'], $dataGet['category'], $dataGet['channel'], $dataGet['status'], $dataGet['author']);
             return $actionClass->editNotice();
         }
 
+        function editNoticeStatus($dataGet){
+            $actionClass = new noticeClass($dataGet['id'], $dataGet['title'], $dataGet['header'], $dataGet['text'], $dataGet['category'], $dataGet['channel'], $dataGet['status']);
+            return $actionClass->editNoticeStatus();
+        }
+
         function deleteNotice($dataGet){
-            $actionClass = new noticeClass($dataGet[''], $dataGet['id'], $dataGet['author']);
+            $actionClass = new noticeClass($dataGet['id'], $dataGet['title'], $dataGet['header'], $dataGet['text'], $dataGet['category'], $dataGet['channel'], $dataGet['status'], $dataGet['author']);
             return $actionClass->deleteNotice();
         }
     }
@@ -75,6 +80,9 @@
             break;
         case "editNotice":
             $dataReturn = $searchAction->editNotice($dataGet);
+            break;
+        case "editNoticeStatus":
+            $dataReturn = $searchAction->editNoticeStatus($dataGet);
             break;
         case "deleteNotice":
             $dataReturn = $searchAction->deleteNotice($dataGet);

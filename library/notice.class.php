@@ -26,21 +26,28 @@
 
         /*-- ?action=createNotice&title=&header=&text=&category=&channel=&status=&author= --*/
         public function createNotice(){
+            echo "SELECT create_notice('".$this->title."', '".$this->header."', '".$this->text."', ".$this->category.", ".$this->channel.", ".$this->status.", ".$this->author.") AS `Message`;";
             $dbc = new PDOClass();
             return $dbc->getQuery("SELECT create_notice('".$this->title."', '".$this->header."', '".$this->text."', ".$this->category.", ".$this->channel.", ".$this->status.", ".$this->author.") AS `Message`;");
         }
 
         /*-- ?action=editNotice&id=&title=&header=&text=&category=&channel=&author= --*/
         public function editNotice(){
-            echo "SELECT edit_notice(".$this->id.", '".$this->title."', '".$this->header."', '".$this->text."', ".$this->category.", ".$this->channel.", ".$this->author.") AS `Message`;";
             $dbc = new PDOClass();
             return $dbc->getQuery("SELECT edit_notice(".$this->id.", '".$this->title."', '".$this->header."', '".$this->text."', ".$this->category.", ".$this->channel.", ".$this->author.") AS `Message`;");
+        }
+        
+        /*-- ?action=editNotice&id=&status= --*/
+        public function editNoticeStatus(){
+            echo "SELECT edit_notice_status('".$this->id."', ".$this->status.") AS `Message`;";
+            $dbc = new PDOClass();
+            return $dbc->getQuery("SELECT edit_notice_status('".$this->id."', ".$this->status.") AS `Message`;");
         }
 
         /*-- ?action=deleteNotice&id=&author= --*/
         public function deleteNotice(){
             $dbc = new PDOClass();
-            return $dbc->getQuery("SELECT delete_notice('".$this->title."', ".$this->author.") AS `Message`;");
+            return $dbc->getQuery("SELECT delete_notice('".$this->id."', ".$this->author.") AS `Message`;");
         }
     }
 ?>
