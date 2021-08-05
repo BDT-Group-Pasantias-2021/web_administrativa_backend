@@ -12,15 +12,12 @@
 ## Comment Class
 
 | Function       | URL                                                               |
-| -------------- | ------------------------------------------------------------------|
+| -------------- | ----------------------------------------------------------------- |
 | insertReaction | action=insertReaction&idComment=&authorReaction=&contentReaction= |
 | deleteReaction | ?action=deleteReaction&idReaction=                                |
 | createComment  | ?action=createComment&author=&notice=&text=                       |
 | editComment    | ?action=editComment&idComment=&author=&text=                      |
 | deleteComment  | ?action=deleteComment&idComment=&author=                          |
-
-
-
 
 ## Notice Class
 
@@ -31,7 +28,9 @@
 | editNoticeStatus | ?action=editNotice&id=&status=                                               |
 | deleteNotice     | ?action=deleteNotice&id=&author=                                             |
 
-| Store Procedure     | URL                                       |
-| ------------------- | ----------------------------------------- |
-| generalNoticeSearch | ?action=generalNoticeSearch&campo=&valor= |
-| searhNotification   | ?action=searhNotification&title=          |
+| Store Procedure          | URL                                             |
+| ------------------------ | ----------------------------------------------- |
+| generalNoticeSearch      | ?action=generalNoticeSearch&campo=&valor=       |
+| searchActiveNotification | ?action=searchActiveNotification&campo=&status= |
+| searhNotification        | ?action=searhNotification&title=                |
+| textNoticeSearch         | ?action=textNoticeSearch&title=                 |

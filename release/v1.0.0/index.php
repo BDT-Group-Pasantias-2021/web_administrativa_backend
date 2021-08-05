@@ -107,6 +107,11 @@
             return $actionClass->generalNoticeSearch($dataGet['campo'], $dataGet['valor']);
         }
 
+        function searchActiveNotification($dataGet){
+            $actionClass = new noticeClass(0, "", "", "", "", 0, 0, 0, "", "");
+            return $actionClass->searchActiveNotification($dataGet['status']);
+        }
+
         function searhNotification($dataGet){
             $actionClass = new noticeClass(0, "", "", "", "", 0, 0, 0, "", "");
             return $actionClass->searhNotification($dataGet['title']);
@@ -176,6 +181,9 @@
             break;
         case "generalNoticeSearch":
             $dataReturn = $searchAction->generalNoticeSearch($dataGet);
+            break;
+        case "searchActiveNotification":
+            $dataReturn = $searchAction->searchActiveNotification($dataGet);
             break;
         case "searhNotification":
             $dataReturn = $searchAction->searhNotification($dataGet);

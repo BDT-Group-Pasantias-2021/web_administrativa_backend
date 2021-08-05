@@ -56,6 +56,12 @@
             return $dbc->getQuery("CALL web_administra.general_notice_search(".$campo.", '".$valor."');");
         }
 
+        /*-- ?action=searchActiveNotification&campo=&status= --*/
+        public function searchActiveNotification($status){
+            $dbc = new PDOClass();
+            return $dbc->getQuery("CALL web_administra.search_active_notification(".$status.");");
+        }
+
         /*-- ?action=searhNotification&title= --*/
         public function searhNotification($title){
             $dbc = new PDOClass();
