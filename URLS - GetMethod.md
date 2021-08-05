@@ -11,9 +11,16 @@
 
 ## Comment Class
 
-| Function       | URL                                |
-| -------------- | ---------------------------------- |
-| deleteReaction | ?action=deleteReaction&idReaction= |
+| Function       | URL                                                               |
+| -------------- | ------------------------------------------------------------------|
+| insertReaction | action=insertReaction&idComment=&authorReaction=&contentReaction= |
+| deleteReaction | ?action=deleteReaction&idReaction=                                |
+| createComment  | ?action=createComment&author=&notice=&text=                       |
+| editComment    | ?action=editComment&idComment=&author=&text=                      |
+| deleteComment  | ?action=deleteComment&idComment=&author=                          |
+
+
+
 
 ## Notice Class
 

@@ -54,13 +54,28 @@
         /* COMMENTS FUNCTIONS */
         
         function deleteReaction($dataGet){
-            $actionClass = new commentClass( $dataGet['idReaction'], 0, 0, "");
+            $actionClass = new commentClass( 0, $dataGet['idReaction'], 0, "", 0, 0, "");
             return $actionClass->deleteReaction();
         }
 
+        function insertReaction($dataGet){
+            $actionClass = new commentClass( $dataGet['idComment'], 0, $dataGet['authorReaction'], $dataGet['contentReaction'], 0, 0, "");
+            return $actionClass->insertReaction();
+        }
+
         function createComment($dataGet){
-            $actionClass = new commentClass( 0, $dataGet['author'], $dataGet['notice'], $dataGet['text'] );
+            $actionClass = new commentClass( 0, 0, 0, "", $dataGet['author'], $dataGet['notice'], $dataGet['text'] );
             return $actionClass->createComment();
+        }
+
+        function editComment($dataGet){
+            $actionClass = new commentClass($dataGet['idComment'], 0, 0, "", $dataGet['author'], 0, $dataGet['text'] );
+            return $actionClass->editComment();
+        }
+
+        function deleteComment($dataGet){
+            $actionClass = new commentClass($dataGet['idComment'], 0, 0, "", $dataGet['author'], 0, "");
+            return $actionClass->deleteComment();
         }
 
         /* NOTICES FUNCTIONS */
@@ -131,6 +146,21 @@
             break;
         case "createComment":
             $dataReturn = $searchAction->createComment($dataGet);
+            break;
+        case "insertReaction":
+            $dataReturn = $searchAction->insertReaction($dataGet);
+            break;
+        case "deleteReaction":
+            $dataReturn = $searchAction->deleteReaction($dataGet);
+            break;
+        case "createComment":
+            $dataReturn = $searchAction->createComment($dataGet);
+            break;
+        case "editComment":
+            $dataReturn = $searchAction->editComment($dataGet);
+            break;
+        case "deleteComment":
+            $dataReturn = $searchAction->deleteComment($dataGet);
             break;
         case "createNotice":
             $dataReturn = $searchAction->createNotice($dataGet);
