@@ -49,5 +49,23 @@
             $dbc = new PDOClass();
             return $dbc->getQuery("SELECT delete_notice('".$this->id."', ".$this->author.") AS `Message`;");
         }
+
+        /*-- ?action=generalNoticeSearch&campo=&valor= --*/
+        public function generalNoticeSearch($campo, $valor){
+            $dbc = new PDOClass();
+            return $dbc->getQuery("CALL web_administra.general_notice_search(".$campo.", '".$valor."');");
+        }
+
+        /*-- ?action=searhNotification&title= --*/
+        public function searhNotification($title){
+            $dbc = new PDOClass();
+            return $dbc->getQuery("CALL web_administra.search_notification('".$title."');");
+        }
+
+        /*-- ?action=textNoticeSearch&title= --*/
+        public function textNoticeSearch($title){
+            $dbc = new PDOClass();
+            return $dbc->getQuery("CALL web_administra.text_notice_search('".$title."');");
+        }
     }
 ?>

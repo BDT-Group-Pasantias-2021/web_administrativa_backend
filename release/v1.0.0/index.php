@@ -84,6 +84,23 @@
             $actionClass = new noticeClass($dataGet['id'], $dataGet['title'], $dataGet['header'], $dataGet['text'], $dataGet['category'], $dataGet['channel'], $dataGet['status'], $dataGet['author']);
             return $actionClass->deleteNotice();
         }
+
+        /* NOTICES STORED PROCEDURES */
+
+        function generalNoticeSearch($dataGet){
+            $actionClass = new noticeClass(0, "", "", "", "", 0, 0, 0, "", "");
+            return $actionClass->generalNoticeSearch($dataGet['campo'], $dataGet['valor']);
+        }
+
+        function searhNotification($dataGet){
+            $actionClass = new noticeClass(0, "", "", "", "", 0, 0, 0, "", "");
+            return $actionClass->searhNotification($dataGet['title']);
+        }
+
+        function textNoticeSearch($dataGet){
+            $actionClass = new noticeClass(0, "", "", "", "", 0, 0, 0, "", "");
+            return $actionClass->textNoticeSearch($dataGet['title']);
+        }
     }
     
 
@@ -126,6 +143,15 @@
             break;
         case "deleteNotice":
             $dataReturn = $searchAction->deleteNotice($dataGet);
+            break;
+        case "generalNoticeSearch":
+            $dataReturn = $searchAction->generalNoticeSearch($dataGet);
+            break;
+        case "searhNotification":
+            $dataReturn = $searchAction->searhNotification($dataGet);
+            break;
+        case "textNoticeSearch":
+            $dataReturn = $searchAction->textNoticeSearch($dataGet);
             break;
     }
 
