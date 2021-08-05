@@ -13,8 +13,9 @@
         private $phoneUser;
         private $typeUser;
         private $confirmPassword;
+        private $newConfirmPassword;
 
-        public function __construct($id = 0, $email = "", $password = "", $name = "", $typeDocument = 0, $documentUser = 0, $fechaNac = "", $phoneUser = 0, $typeUser = 0, $confirmPassword = ""){
+        public function __construct($id = 0, $email = "", $password = "", $name = "", $typeDocument = 0, $documentUser = 0, $fechaNac = "", $phoneUser = 0, $typeUser = 0, $confirmPassword = "", $newConfirmPassword = ""){
             $this->id = $id;
             $this->email = $email;
             $this->password = $password;
@@ -25,6 +26,7 @@
             $this->phoneUser = $phoneUser;
             $this->typeUser = $typeUser;
             $this->confirmPassword = $confirmPassword;
+            $this->newConfirmPassword = $newConfirmPassword;
         }
 
         /*-- ?action=getRankUser&email=&password= --*/
@@ -55,6 +57,19 @@
             $dbc = new PDOClass();
             return $dbc->getQuery("SELECT get_age_user('".$this->id."') AS `Message`;");
         }
+
+        /*-- ?action=changeTypeUser&email=&typeUser=&password= --*/
+        public function changeTypeUser(){
+            $dbc = new PDOClass();
+            return $dbc-> getQuery("SELECT change_typeUser('".$this->email."', '".$this->password."', ".$this->typeUser." ) AS `Message`;");
+        }
+
+        /*-- ?action=changePassword&email=&password=&confirmPassword=&newConfirmPassword= --*/
+        public function changePassword(){
+            $dbc = new PDOClass();
+            return $dbc-> getQuery("SELECT change_pass('".$this->email."', '".$this->password."', '".$this->confirmPassword."', '".$this->newConfirmPassword."')AS `Message`;");
+        }
+        
     }
 
 

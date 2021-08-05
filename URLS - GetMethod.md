@@ -3,6 +3,9 @@
 //getRankUser -> ?action=getRankUser&email=&password=
 //passRecovery -> ?action=passRecovery&email=
 //insertUser -> ?action=insertUser&name=&email=&typeDocument=&documentUser=&fechaNac=&phoneUser=&typeUser=&password=&confirmPassword= 
+//changeTypeUser -> ?action=changeTypeUser&email=&typeUser=&password= --*/
+//changePassword -> ?action=changePassword&email=&password=&confirmPassword=&newConfirmPassword= --*/
+
 ## Comment Class
 
 //deleteReaction -> ?action=deleteReaction&idReaction=

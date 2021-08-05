@@ -17,27 +17,37 @@
         /* USERS FUNCTIONS */
         
         function getRankUser($dataGet){
-            $actionClass = new userClass( 0,$dataGet['email'], $dataGet['password'], "",0,"", "","", 0, "");
+            $actionClass = new userClass( 0,$dataGet['email'], $dataGet['password'], "",0,"", "","", 0, "", "");
             return $actionClass->getRankUser();
         }
         
         function passRecovery($dataGet){
-            $actionClass = new userClass( 0,$dataGet['email'], "", "",0,"", "","", 0, "");
+            $actionClass = new userClass( 0,$dataGet['email'], "", "",0,"", "","", 0, "", "");
             return $actionClass->passRecovery();
         }
 
         function insertUser($dataGet){
-            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], $dataGet['name'], $dataGet['typeDocument'], $dataGet['documentUser'], $dataGet['fechaNac'], $dataGet['phoneUser'], $dataGet['typeUser'], $dataGet['confirmPassword']);
+            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], $dataGet['name'], $dataGet['typeDocument'], $dataGet['documentUser'], $dataGet['fechaNac'], $dataGet['phoneUser'], $dataGet['typeUser'], $dataGet['confirmPassword'],"");
             return $actionClass->insertUser();
         }
 
         function restrictNotice($dataGet){
-            $actionClass = new userClass( $dataGet['id'],"", "", "",0,"", "","", 0, "");
+            $actionClass = new userClass( $dataGet['id'],"", "", "",0,"", "","", 0, "","");
             return $actionClass->restrictNotice();
         }
         function getAgeUser($dataGet){
-            $actionClass = new userClass( $dataGet['id'],"", "", "",0,"", "","", 0, "");
+            $actionClass = new userClass( $dataGet['id'],"", "", "",0,"", "","", 0, "","");
             return $actionClass->getAgeUser();
+        }
+
+        function changeTypeUser($dataGet){
+            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], "", 0, 0, "", 0, $dataGet['typeUser'], "", "");
+            return $actionClass->changeTypeUser();
+        }
+        
+        function changePassword($dataGet){
+            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], "", 0, 0, "", 0, 0, "$dataGet['confirmPassword']", "$dataGet['newConfirmPassword']");
+            return $actionClass->changePassword();
         }
         
 
@@ -92,6 +102,12 @@
             break;
         case "getAgeUser":
             $dataReturn = $searchAction->getAgeUser($dataGet);
+            break;
+        case "changeTypeUser":
+            $dataReturn = $searchAction->changeTypeUser($dataGet);
+            break;
+        case "changePassword":
+            $dataReturn = $searchAction->changePassword($dataGet);
             break;
         case "deleteReaction":
             $dataReturn = $searchAction->deleteReaction($dataGet);
