@@ -231,14 +231,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../assets/favicon.png">
+    <link rel="stylesheet" href="../../css/index.css">
     <title>Pasantías - BDT 2021</title>
 </head>
 </head>
 <body>
-    <div style="display: flex; align-items: center;">
-        <h2 style="display:inline-block; padding-right: 10px;">¡Hola de nuevo!</h2>
-        <img src="https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand.gif">
+    <div class="principal-container">
+        <h2>¡Hola de nuevo!</h2>
+        <img class="welcome-gif" src="https://a.slack-edge.com/6c404/marketing/img/homepage/bold-existing-users/waving-hand.gif">
     </div>
-    <div><?php echo $dataReturn;?></div>    
+    <div class="delivered-content">
+        <p><?php if(count($dataGet) > 0){
+                                    echo print_r($dataGet);
+                                } else {
+                                    echo "\"No parameters found...\"";
+                                };?></p>
+    </div>
+    <div class="delivered-content">
+        <?php echo "<pre>"; 
+                echo utf8_ansi(json_encode(json_decode($dataReturn), JSON_PRETTY_PRINT)); 
+                echo "</pre>";?>
+    </div>
 </body>
 </html>
