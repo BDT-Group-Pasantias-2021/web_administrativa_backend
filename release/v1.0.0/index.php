@@ -26,6 +26,11 @@
             return $actionClass->passRecovery();
         }
 
+        function insertUser($dataGet){
+            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], $dataGet['name'], $dataGet['typeDocument'], $dataGet['documentUser'], $dataGet['fechaNac'], $dataGet['phoneUser'], $dataGet['typeUser'], $dataGet['confirmPassword']);
+            return $actionClass->insertUser();
+        }
+
         /* COMMENTS FUNCTIONS */
         
         function deleteReaction($dataGet){
@@ -68,6 +73,9 @@
             break;
         case "passRecovery":
             $dataReturn = $searchAction->passRecovery($dataGet);
+            break;
+        case "insertUser":
+            $dataReturn = $searchAction->insertUser($dataGet);
             break;
         case "deleteReaction":
             $dataReturn = $searchAction->deleteReaction($dataGet);

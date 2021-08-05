@@ -3,12 +3,28 @@
     class userClass{
 
 
+        private $id;
         private $email;
         private $password;
+        private $name;
+        private $typeDocument;
+        private $documentUser;
+        private $fechaNac;
+        private $phoneUser;
+        private $typeUser;
+        private $confirmPassword;
 
-        public function __construct($email = "", $password = ""){
+        public function __construct($id = 0, $email = "", $password = "", $name = "", $typeDocument = 0, $documentUser = 0, $fechaNac = "", $phoneUser = 0, $typeUser = 0, $confirmPassword = ""){
+            $this->id = $id;
             $this->email = $email;
             $this->password = $password;
+            $this->name = $name;
+            $this->typeDocument = $typeDocument;
+            $this->documentUser = $documentUser;
+            $this->fechaNac = $fechaNac;
+            $this->phoneUser = $phoneUser;
+            $this->typeUser = $typeUser;
+            $this->confirmPassword = $confirmPassword;
         }
 
         /*-- ?action=getRankUser&email=&password= --*/
@@ -23,6 +39,11 @@
             return $dbc->getQuery("SELECT pass_recovery('".$this->email."') AS `Message`;");
         }
 
+        /*-- ?action=insertUser&name=&email=&typeDocument=&documentUser=&fechaNac=&phoneUser=&typeUser=&password=&confirmPassword= --*/
+        public function insertUser(){
+            $dbc = new PDOClass();
+            return $dbc-> getQuery("SELECT insert_user('".$this->name."', '".$this->email."', ".$this->typeDocument.", '".$this->documentUser."', '".$this->fechaNac."', ".$this->phoneUser.", ".$this->typeUser.", '".$this->password."', '".$this->confirmPassword."') AS `Message`;");
+        }
 
     }
 

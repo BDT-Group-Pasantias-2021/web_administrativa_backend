@@ -2,7 +2,7 @@
 
 //getRankUser -> ?action=getRankUser&email=&password=
 //passRecovery -> ?action=passRecovery&email=
-
+//insertUser -> ?action=insertUser&name=&email=&typeDocument=&documentUser=&fechaNac=&phoneUser=&typeUser=&password=&confirmPassword= 
 ## Comment Class
 
 //deleteReaction -> ?action=deleteReaction&idReaction=
