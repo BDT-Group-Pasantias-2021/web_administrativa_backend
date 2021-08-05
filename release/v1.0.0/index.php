@@ -17,7 +17,7 @@
         /* USERS FUNCTIONS */
         
         function getRankUser($dataGet){
-            $actionClass = new userClass( 0,$dataGet['email'], $dataGet['password', "",0,"", "","", 0, "");
+            $actionClass = new userClass( 0,$dataGet['email'], $dataGet['password'], "",0,"", "","", 0, "");
             return $actionClass->getRankUser();
         }
         
