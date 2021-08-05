@@ -70,6 +70,11 @@
             return $dbc-> getQuery("SELECT change_pass('".$this->email."', '".$this->password."', '".$this->confirmPassword."', '".$this->newConfirmPassword."')AS `Message`;");
         }
         
+        public function searchUserByStatus($userStatus){
+            $dbc = new PDOClass();
+            return $dbc-> getQuery("CALL web_administra.search_user_by_status('".$userStatus."');");
+        }
+
     }
 
 

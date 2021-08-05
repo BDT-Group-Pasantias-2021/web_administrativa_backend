@@ -51,6 +51,7 @@
         }
         
 
+
         /* COMMENTS FUNCTIONS */
         
         function deleteReaction($dataGet){
@@ -100,6 +101,14 @@
             return $actionClass->deleteNotice();
         }
 
+        /* USER STORED PROCEDURES */
+
+        function searchUserByStatus($dataGet){
+            $actionClass = userClass(0,"","","",0,0,"",0,0,"","");
+            return $actionClass->searchUserByStatus($dataGet['userStatus']);
+        }
+        
+
         /* NOTICES STORED PROCEDURES */
 
         function generalNoticeSearch($dataGet){
@@ -145,6 +154,9 @@
             break;
         case "changePassword":
             $dataReturn = $searchAction->changePassword($dataGet);
+            break;
+        case "searchUserByStatus":
+            $dataReturn = $searchAction->searchUserByStatus($dataGet);
             break;
         case "deleteReaction":
             $dataReturn = $searchAction->deleteReaction($dataGet);
