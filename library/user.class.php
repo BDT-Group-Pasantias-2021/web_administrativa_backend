@@ -50,7 +50,11 @@
             $dbc = new PDOClass();
             return $dbc->getQuery("SELECT restrict_notice('".$this->id."') AS `Message`;");
         }
-
+         /*-- ?action=getAgeUser&id= -- */
+         public function getAgeUser(){
+            $dbc = new PDOClass();
+            return $dbc->getQuery("SELECT get_age_user('".$this->id."') AS `Message`;");
+        }
     }
 
 

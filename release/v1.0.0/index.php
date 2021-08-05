@@ -35,6 +35,10 @@
             $actionClass = new userClass( $dataGet['id'],"", "", "",0,"", "","", 0, "");
             return $actionClass->restrictNotice();
         }
+        function getAgeUser($dataGet){
+            $actionClass = new userClass( $dataGet['id'],"", "", "",0,"", "","", 0, "");
+            return $actionClass->getAgeUser();
+        }
         
 
         /* COMMENTS FUNCTIONS */
@@ -85,6 +89,9 @@
             break;
         case "restrictNotice":
             $dataReturn = $searchAction->restrictNotice($dataGet);
+            break;
+        case "getAgeUser":
+            $dataReturn = $searchAction->getAgeUser($dataGet);
             break;
         case "deleteReaction":
             $dataReturn = $searchAction->deleteReaction($dataGet);
