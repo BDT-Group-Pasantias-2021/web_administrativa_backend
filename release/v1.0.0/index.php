@@ -46,7 +46,7 @@
         }
         
         function changePassword($dataGet){
-            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], "", 0, 0, "", 0, 0, "$dataGet['confirmPassword']", "$dataGet['newConfirmPassword']");
+            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], "", 0, 0, "", 0, 0, $dataGet['confirmPassword'],$dataGet['newConfirmPassword']);
             return $actionClass->changePassword();
         }
         
