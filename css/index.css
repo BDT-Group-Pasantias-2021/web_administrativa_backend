@@ -8,7 +8,8 @@
 }
 
 body {
-	background-color: #1e202e;
+	/* background-color: #1e252e; */
+	background-color: #051e26;
 	width: 100%;
 }
 
@@ -16,7 +17,7 @@ body {
 	height: 3rem;
 	display: flex;
 	align-items: center;
-	background: #2c2e43;
+	background: #083a3d;
 	border-radius: 5px;
 	margin: 10px;
 	padding: 7.5px 10px;
@@ -38,7 +39,7 @@ body {
 	height: auto;
 	display: flex;
 	align-items: center;
-	background: #2c2e43;
+	background: #08313d;
 	border-radius: 5px;
 	margin: 10px;
 	padding: 10px 10px;
