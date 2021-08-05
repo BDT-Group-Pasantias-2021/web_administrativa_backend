@@ -45,6 +45,12 @@
             return $dbc-> getQuery("SELECT insert_user('".$this->name."', '".$this->email."', ".$this->typeDocument.", '".$this->documentUser."', '".$this->fechaNac."', ".$this->phoneUser.", ".$this->typeUser.", '".$this->password."', '".$this->confirmPassword."') AS `Message`;");
         }
 
+        /*-- ?action=restrictNotice&id= -- */
+        public function restrictNotice(){
+            $dbc = new PDOClass();
+            return $dbc->getQuery("SELECT restrict_notice('".$this->id."') AS `Message`;");
+        }
+
     }
 
 

@@ -17,12 +17,12 @@
         /* USERS FUNCTIONS */
         
         function getRankUser($dataGet){
-            $actionClass = new userClass( $dataGet['email'], $dataGet['password']);
+            $actionClass = new userClass( 0,$dataGet['email'], $dataGet['password', "",0,"", "","", 0, "");
             return $actionClass->getRankUser();
         }
         
         function passRecovery($dataGet){
-            $actionClass = new userClass( $dataGet['email']);
+            $actionClass = new userClass( 0,$dataGet['email'], "", "",0,"", "","", 0, "");
             return $actionClass->passRecovery();
         }
 
@@ -30,6 +30,12 @@
             $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], $dataGet['name'], $dataGet['typeDocument'], $dataGet['documentUser'], $dataGet['fechaNac'], $dataGet['phoneUser'], $dataGet['typeUser'], $dataGet['confirmPassword']);
             return $actionClass->insertUser();
         }
+
+        function restrictNotice($dataGet){
+            $actionClass = new userClass( $dataGet['id'],"", "", "",0,"", "","", 0, "");
+            return $actionClass->restrictNotice();
+        }
+        
 
         /* COMMENTS FUNCTIONS */
         
@@ -76,6 +82,9 @@
             break;
         case "insertUser":
             $dataReturn = $searchAction->insertUser($dataGet);
+            break;
+        case "restrictNotice":
+            $dataReturn = $searchAction->restrictNotice($dataGet);
             break;
         case "deleteReaction":
             $dataReturn = $searchAction->deleteReaction($dataGet);
