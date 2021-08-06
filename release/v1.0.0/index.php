@@ -121,10 +121,17 @@
         /* USER STORED PROCEDURES */
 
         function searchUserByStatus($dataGet){
-            $actionClass = userClass(0,"","","",0,0,"",0,0,"","");
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
             return $actionClass->searchUserByStatus($dataGet['userStatus']);
         }
-        
+        function searchUserById($dataGet){
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
+            return $actionClass->searchUserById($dataGet['userId']);
+        }
+        function searchUserByEmail($dataGet){
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
+            return $actionClass->searchUserByEmail($dataGet['userEmail']);
+        }
 
         /* NOTICES STORED PROCEDURES */
 
@@ -223,7 +230,12 @@
         case "textNoticeSearch":
             $dataReturn = $searchAction->textNoticeSearch($dataGet);
             break;
-
+        case "searchUserById":
+            $dataReturn = $searchAction->searchUserById($dataGet);
+            break;
+        case "searchUserByEmail":
+            $dataReturn = $searchAction->searchUserByEmail($dataGet);
+            break;
     }
 
     $dataReturn = utf8_ansi(json_encode($dataReturn));

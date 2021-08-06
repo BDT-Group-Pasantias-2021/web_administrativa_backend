@@ -87,6 +87,18 @@
             return $dbc-> getQuery("CALL web_administra.search_user_by_status('".$userStatus."');");
         }
 
+
+        /*-- ?action=searchUserById&userId= --*/
+        public function searchUserById($userId){
+            $dbc = new PDOClass();
+            return $dbc-> getQuery("CALL search_user_by_id('".$userId."');");
+        }
+        /*-- ?action=searchUserByEmail&userEmail= --*/
+        public function searchUserByEmail($userEmail){
+            $dbc = new PDOClass();
+            return $dbc-> getQuery("CALL search_user_by_email('".$userEmail."');");
+        }
+        
         
     }
 
