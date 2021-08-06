@@ -52,15 +52,15 @@
 
 
         /* COMMENTS FUNCTIONS */
-        
-        function deleteReaction($dataGet){
-            $actionClass = new commentClass( 0, $dataGet['idReaction'], 0, "", 0, 0, "");
-            return $actionClass->deleteReaction();
-        }
 
         function insertReaction($dataGet){
             $actionClass = new commentClass( $dataGet['idComment'], 0, $dataGet['authorReaction'], $dataGet['contentReaction'], 0, 0, "");
             return $actionClass->insertReaction();
+        }
+        
+        function deleteReaction($dataGet){
+            $actionClass = new commentClass( 0, $dataGet['idReaction'], 0, "", 0, 0, "");
+            return $actionClass->deleteReaction();
         }
 
         function createComment($dataGet){
@@ -166,15 +166,6 @@
         case "changePassword":
             $dataReturn = $searchAction->changePassword($dataGet);
             break;
-        case "searchUserByStatus":
-            $dataReturn = $searchAction->searchUserByStatus($dataGet);
-            break;
-        case "deleteReaction":
-            $dataReturn = $searchAction->deleteReaction($dataGet);
-            break;
-        case "createComment":
-            $dataReturn = $searchAction->createComment($dataGet);
-            break;
         case "insertReaction":
             $dataReturn = $searchAction->insertReaction($dataGet);
             break;
@@ -202,6 +193,15 @@
         case "deleteNotice":
             $dataReturn = $searchAction->deleteNotice($dataGet);
             break;
+        case "searchCommentByAuthor":
+            $dataReturn = $searchAction->searchCommentByAuthor($dataGet);
+            break;
+        case "searchCommentByNotice":
+            $dataReturn = $searchAction->searchCommentByNotice($dataGet);
+            break;
+        case "searchUserByStatus":
+            $dataReturn = $searchAction->searchUserByStatus($dataGet);
+            break;
         case "generalNoticeSearch":
             $dataReturn = $searchAction->generalNoticeSearch($dataGet);
             break;
@@ -214,12 +214,7 @@
         case "textNoticeSearch":
             $dataReturn = $searchAction->textNoticeSearch($dataGet);
             break;
-        case "searchCommentByAuthor":
-            $dataReturn = $searchAction->searchCommentByAuthor($dataGet);
-            break;
-        case "searchCommentByNotice":
-            $dataReturn = $searchAction->searchCommentByNotice($dataGet);
-            break;
+
     }
 
     $dataReturn = utf8_ansi(json_encode($dataReturn));

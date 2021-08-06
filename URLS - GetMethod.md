@@ -23,7 +23,7 @@
 | Stored Procedure          | URL                                             |
 | ------------------------- | ----------------------------------------------- |
 | searchCommentByAuthor     | ?action=searchCommentByAuthor&author=           |
-| searchCommentByNotice     | ?action=searchCommentByNotice&author= |
+| searchCommentByNotice     | ?action=searchCommentByNotice&author=           |
 
 
 ## Notice Class
@@ -35,9 +35,9 @@
 | editNoticeStatus | ?action=editNotice&id=&status=                                               |
 | deleteNotice     | ?action=deleteNotice&id=&author=                                             |
 
-| Stored Procedure          | URL                                             |
+| Stored Procedure         | URL                                             |
 | ------------------------ | ----------------------------------------------- |
 | generalNoticeSearch      | ?action=generalNoticeSearch&campo=&valor=       |
 | searchActiveNotification | ?action=searchActiveNotification&campo=&status= |
-| searhNotification        | ?action=searhNotification&title=                |
+| searchNotification       | ?action=searchNotification&title=               |
 | textNoticeSearch         | ?action=textNoticeSearch&title=                 |
