@@ -50,6 +50,12 @@
             return $actionClass->changePassword();
         }
 
+        /* COMMENTS STORED PROCEDURES */
+        
+        function searchUserByDocument($dataGet){
+            $actionClass = new userClass( 0, "", "", "", 0, 0, "", 0, 0, "", "");
+            return $actionClass->searchUserByDocument($dataGet['searchDocumentUser']);
+        }
 
         /* COMMENTS FUNCTIONS */
 
@@ -166,6 +172,12 @@
         case "changePassword":
             $dataReturn = $searchAction->changePassword($dataGet);
             break;
+        case "searchUserByDocument":
+            $dataReturn = $searchAction->searchUserByDocument($dataGet);
+            break;
+        case "searchUserByStatus":
+            $dataReturn = $searchAction->searchUserByStatus($dataGet);
+            break;
         case "insertReaction":
             $dataReturn = $searchAction->insertReaction($dataGet);
             break;
@@ -198,9 +210,6 @@
             break;
         case "searchCommentByNotice":
             $dataReturn = $searchAction->searchCommentByNotice($dataGet);
-            break;
-        case "searchUserByStatus":
-            $dataReturn = $searchAction->searchUserByStatus($dataGet);
             break;
         case "generalNoticeSearch":
             $dataReturn = $searchAction->generalNoticeSearch($dataGet);

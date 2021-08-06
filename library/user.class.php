@@ -75,6 +75,12 @@
         
         //STORED PROCEDURES USER
 
+        /*-- ?action=searchUserByDocument&searchDocumentUser= --*/
+        public function searchUserByDocument($searchDocumentUser){
+            $dbc = new PDOClass();
+            return $dbc-> getQuery("CALL web_administra.search_user_by_document(".$searchDocumentUser.");");
+        }
+        
         /*-- ?action=searhUserByStatus&userStatus= --*/
         public function searchUserByStatus($userStatus){
             $dbc = new PDOClass();

@@ -10,6 +10,11 @@
 | changePassword | ?action=changePassword&email=&password=&confirmPassword=&newConfirmPassword=                                         |
 | getAgeUser     | ?action=getAgeUser&id=                                                                                               |
 
+| Stored Procedure     | URL                                            |
+| -------------------- | ---------------------------------------------- |
+| searchUserByDocument | ?action=searchUserByStatus&searchDocumentUser= |
+| searchUserByStatus   | ?action=searchUserByStatus&userStatus=         |
+
 ## Comment Class
 
 | Function       | URL                                                               |
@@ -20,11 +25,10 @@
 | editComment    | ?action=editComment&idComment=&author=&text=                      |
 | deleteComment  | ?action=deleteComment&idComment=&author=                          |
 
-| Stored Procedure          | URL                                             |
-| ------------------------- | ----------------------------------------------- |
-| searchCommentByAuthor     | ?action=searchCommentByAuthor&author=           |
-| searchCommentByNotice     | ?action=searchCommentByNotice&author=           |
-
+| Stored Procedure      | URL                                   |
+| --------------------- | ------------------------------------- |
+| searchCommentByAuthor | ?action=searchCommentByAuthor&author= |
+| searchCommentByNotice | ?action=searchCommentByNotice&author= |
 
 ## Notice Class
 
