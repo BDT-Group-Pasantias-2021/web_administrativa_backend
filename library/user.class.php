@@ -28,6 +28,9 @@
             $this->confirmPassword = $confirmPassword;
             $this->newConfirmPassword = $newConfirmPassword;
         }
+        
+        
+        // FUNCTIONS USER
 
         /*-- ?action=getRankUser&email=&password= --*/
         public function getRankUser(){ 
@@ -70,6 +73,8 @@
             return $dbc-> getQuery("SELECT change_pass('".$this->email."', '".$this->password."', '".$this->confirmPassword."', '".$this->newConfirmPassword."')AS `Message`;");
         }
         
+        //STORED PROCEDURES USER
+
         /*-- ?action=searhUserByStatus&userStatus= --*/
         public function searchUserByStatus($userStatus){
             $dbc = new PDOClass();
