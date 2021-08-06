@@ -132,9 +132,9 @@
             return $actionClass->searchActiveNotification($dataGet['status']);
         }
 
-        function searhNotification($dataGet){
+        function searchNotification($dataGet){
             $actionClass = new noticeClass(0, "", "", "", "", 0, 0, 0, "", "");
-            return $actionClass->searhNotification($dataGet['title']);
+            return $actionClass->searchNotification($dataGet['title']);
         }
 
         function textNoticeSearch($dataGet){
@@ -208,8 +208,8 @@
         case "searchActiveNotification":
             $dataReturn = $searchAction->searchActiveNotification($dataGet);
             break;
-        case "searhNotification":
-            $dataReturn = $searchAction->searhNotification($dataGet);
+        case "searchNotification":
+            $dataReturn = $searchAction->searchNotification($dataGet);
             break;
         case "textNoticeSearch":
             $dataReturn = $searchAction->textNoticeSearch($dataGet);

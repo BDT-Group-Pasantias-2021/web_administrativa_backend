@@ -62,8 +62,8 @@
             return $dbc->getQuery("CALL web_administra.search_active_notification(".$status.");");
         }
 
-        /*-- ?action=searhNotification&title= --*/
-        public function searhNotification($title){
+        /*-- ?action=searchNotification&title= --*/
+        public function searchNotification($title){
             $dbc = new PDOClass();
             return $dbc->getQuery("CALL web_administra.search_notification('".$title."');");
         }
