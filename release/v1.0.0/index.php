@@ -56,6 +56,7 @@
             $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
             return $actionClass->searchUserByStatus($dataGet['userStatus']);
         }
+        
         function searchUserById($dataGet){
             $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
             return $actionClass->searchUserById($dataGet['userId']);

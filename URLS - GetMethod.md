@@ -16,6 +16,8 @@
 | searchUserByStatus   | ?action=searchUserByStatus&userStatus=         |
 | searchUserByPhone    | ?action=searchUserByPhone&userPhone=           |
 | searchUserByName     | ?action=searchUserByName&userName=             |
+| searchUserById       | ?action=searchUserById&userId=                 |
+| searchUserByEmail    | ?action=searchUserByEmail&userEmail=           |
 
 
 ## Comment Class
