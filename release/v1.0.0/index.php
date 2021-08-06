@@ -1,6 +1,6 @@
 <?php
     
-    error_reporting(0);
+    //error_reporting(0);
 
     $baseUrl = "../../";
     include_once $baseUrl.'include/headerConfig.php';
@@ -50,7 +50,30 @@
             return $actionClass->changePassword();
         }
 
-        /* COMMENTS STORED PROCEDURES */
+        /* USER STORED PROCEDURES */
+
+        function searchUserByStatus($dataGet){
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
+            return $actionClass->searchUserByStatus($dataGet['userStatus']);
+        }
+        function searchUserById($dataGet){
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
+            return $actionClass->searchUserById($dataGet['userId']);
+        }
+        function searchUserByEmail($dataGet){
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
+            return $actionClass->searchUserByEmail($dataGet['userEmail']);
+        }
+
+        function searchUserByPhone($dataGet){
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
+            return $actionClass->searchUserByPhone($dataGet['userPhone']);
+        }
+        
+        function searchUserByName($dateGet){
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
+            return $actionClass->searchUserByName($dataGet['userName']);
+        }
         
         function searchUserByDocument($dataGet){
             $actionClass = new userClass( 0, "", "", "", 0, 0, "", 0, 0, "", "");
@@ -118,20 +141,7 @@
             return $actionClass->searchCommentByNotice($dataGet['notice']);
         }
 
-        /* USER STORED PROCEDURES */
-
-        function searchUserByStatus($dataGet){
-            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
-            return $actionClass->searchUserByStatus($dataGet['userStatus']);
-        }
-        function searchUserById($dataGet){
-            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
-            return $actionClass->searchUserById($dataGet['userId']);
-        }
-        function searchUserByEmail($dataGet){
-            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
-            return $actionClass->searchUserByEmail($dataGet['userEmail']);
-        }
+        
 
         /* NOTICES STORED PROCEDURES */
 
@@ -235,6 +245,12 @@
             break;
         case "searchUserByEmail":
             $dataReturn = $searchAction->searchUserByEmail($dataGet);
+            break;
+        case "searchUserByPhone":
+            $dataReturn = $searchAction->searchUserByPhone($dataGet);
+            break;
+        case "searchUserByName":
+            $dataReturn = $searchAction->searchUserByName($dataGet);
             break;
     }
 

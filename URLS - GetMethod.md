@@ -14,6 +14,9 @@
 | -------------------- | ---------------------------------------------- |
 | searchUserByDocument | ?action=searchUserByStatus&searchDocumentUser= |
 | searchUserByStatus   | ?action=searchUserByStatus&userStatus=         |
+| searchUserByPhone    | ?action=searchUserByPhone&userPhone=           |
+| searchUserByName     | ?action=searchUserByName&userName=             |
+
 
 ## Comment Class
 
