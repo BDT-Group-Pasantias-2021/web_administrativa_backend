@@ -8,6 +8,7 @@
 | restrictNotice | ?action=restrictNotice&id=                                                                                           |
 | changeTypeUser | ?action=changeTypeUser&email=&typeUser=&password=                                                                    |
 | changePassword | ?action=changePassword&email=&password=&confirmPassword=&newConfirmPassword=                                         |
+| getAgeUser     | ?action=getAgeUser&id=                                                                                               |
 
 ## Comment Class
 
