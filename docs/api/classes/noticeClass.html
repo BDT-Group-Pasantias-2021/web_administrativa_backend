@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta charset="utf-8" />
+		<title>Documentación</title>
+		<meta name="author" content="" />
+		<meta name="description" content="" />
+
+		<link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet" />
+		<link href="../css/font-awesome.min.css" rel="stylesheet" />
+		<link href="../css/prism.css" rel="stylesheet" media="all" />
+		<link href="../css/template.css" rel="stylesheet" media="all" />
+
+		<!--[if lt IE 9]>
+			<script src="../js/html5.js"></script>
+		<![endif]-->
+		<script src="../js/jquery-1.11.0.min.js"></script>
+		<script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/jquery.smooth-scroll.js"></script>
+		<script src="../js/prism.min.js"></script>
+		<!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+		<script type="text/javascript">
+			function loadExternalCodeSnippets() {
+				Array.prototype.slice.call(document.querySelectorAll("pre[data-src]")).forEach(function (pre) {
+					var src = pre.getAttribute("data-src").replace(/\\/g, "/");
+					var extension = (src.match(/\.(\w+)$/) || [, ""])[1];
+					var language = "php";
+
+					var code = document.createElement("code");
+					code.className = "language-" + language;
+
+					pre.textContent = "";
+
+					code.textContent = "Loading…";
+
+					pre.appendChild(code);
+
+					var xhr = new XMLHttpRequest();
+
+					xhr.open("GET", src, true);
+
+					xhr.onreadystatechange = function () {
+						if (xhr.readyState == 4) {
+							if (xhr.status < 400 && xhr.responseText) {
+								code.textContent = xhr.responseText;
+
+								Prism.highlightElement(code);
+							} else if (xhr.status >= 400) {
+								code.textContent = "✖ Error " + xhr.status + " while fetching file: " + xhr.statusText;
+							} else {
+								code.textContent =
+									"✖ Error: File does not exist, is empty or trying to view from localhost";
+							}
+						}
+					};
+
+					xhr.send(null);
+				});
+			}
+
+			$(document).ready(function () {
+				loadExternalCodeSnippets();
+			});
+			$("#source-view").on("shown", function () {
+				loadExternalCodeSnippets();
+			});
+		</script>
+
+		<link rel="icon" href="../images/favicon.png" />
+	</head>
+	<body>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<i class="icon-ellipsis-vertical"></i>
+					</a>
+					<a class="brand" href="../index.html">Documentación - BDT pasantías 2021</a>
+
+					<div class="nav-collapse">
+						<ul class="nav pull-right">
+							<li class="dropdown" id="reports-menu">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Reportes <b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="reports/markers.html">
+											<i class="icon-list-alt"></i>&#160;Marcadores
+											<span class="label label-info pull-right">5</span>
+										</a>
+									</li>
+									<li>
+										<a href="reports/deprecated.html">
+											<i class="icon-list-alt"></i>&#160;Obsoletos
+											<span class="label label-info pull-right">0</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--<div class="go_to_top">-->
+			<!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+			<!--</div>-->
+		</div>
+
+		<div id="___" class="container-fluid">
+			<section class="row-fluid">
+				<div class="span2 sidebar">
+					<div class="accordion" style="margin-bottom: 0">
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a
+									class="accordion-toggle"
+									data-toggle="collapse"
+									data-target="#namespace-1268283356"
+								></a>
+								<a href="namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+							</div>
+							<div id="namespace-1268283356" class="accordion-body collapse in">
+								<div class="accordion-inner">
+									<ul>
+										<li class="class">
+											<a href="../"><abbr title="\Inicio">Inicio</abbr></a>
+										</li>
+										<li class="class">
+											<a href="commentClass.html"
+												><abbr title="\commentClass">commentClass</abbr></a
+											>
+										</li>
+										<li class="class">
+											<a href="noticeClass.html"><abbr title="\noticeClass">noticeClass</abbr></a>
+										</li>
+										<li class="class">
+											<a href="PDOClass.html"><abbr title="\PDOClass">PDOClass</abbr></a>
+										</li>
+										<li class="class">
+											<a href="searchAction.html"
+												><abbr title="\searchAction">searchAction</abbr></a
+											>
+										</li>
+										<li class="class">
+											<a href="userClass.html"><abbr title="\userClass">userClass</abbr></a>
+										</li>
+										<li class="class">
+											<a href="../urlsGetMethod.html"
+												><abbr title="\userClass">URLS - GetMethod</abbr></a
+											>
+										</li>
+									</ul>
+								</div>
+								<div class="nav-collapse">
+									<ul class="nav pull-right">
+										<li class="dropdown" id="reports-menu">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+												Reportes <b class="caret"></b>
+											</a>
+											<ul class="dropdown-menu">
+												<li>
+													<a href="reports/markers.html">
+														<i class="icon-list-alt"></i>&#160;Marcadores
+														<span class="label label-info pull-right">5</span>
+													</a>
+												</li>
+												<li>
+													<a href="reports/deprecated.html">
+														<i class="icon-list-alt"></i>&#160;Obsoletos
+														<span class="label label-info pull-right">0</span>
+													</a>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="row-fluid">
+				<div class="span10 offset2">
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<nav>
+								<a href="namespaces/default.html"><abbr title="\"></abbr></a>
+								<i class="icon-level-up"></i>
+							</nav>
+
+							<h1><small>\</small>noticeClass</h1>
+							<p>
+								<em
+									>noticeClass es utilizada para crear un nuevo objeto noticia el cual almacena las
+									funciones y stored procedures correspondiente tanto para búsquedas y su edición,
+									creación y eliminación</em
+								>
+							</p>
+
+							<section id="summary">
+								<h2>Sumario</h2>
+								<section class="row-fluid heading">
+									<section class="span4">
+										<a href="#methods">Métodos</a>
+									</section>
+									<section class="span4">
+										<a href="#properties">Propiedades</a>
+									</section>
+									<section class="span4">
+										<a href="#constants">Constantes</a>
+									</section>
+								</section>
+								<section class="row-fluid public">
+									<section class="span4">
+										<a href="noticeClass.html#method___construct" class="">__construct()</a><br />
+										<a href="noticeClass.html#method_createNotice" class="">createNotice()</a><br />
+										<a href="noticeClass.html#method_editNotice" class="">editNotice()</a><br />
+										<a href="noticeClass.html#method_editNoticeStatus" class=""
+											>editNoticeStatus()</a
+										><br />
+										<a href="noticeClass.html#method_deleteNotice" class="">deleteNotice()</a><br />
+										<a href="noticeClass.html#method_generalNoticeSearch" class=""
+											>generalNoticeSearch()</a
+										><br />
+										<a href="noticeClass.html#method_searchActiveNotification" class=""
+											>searchActiveNotification()</a
+										><br />
+										<a href="noticeClass.html#method_searchNotification" class=""
+											>searchNotification()</a
+										><br />
+										<a href="noticeClass.html#method_textNoticeSearch" class=""
+											>textNoticeSearch()</a
+										><br />
+									</section>
+									<section class="span4">
+										<em>No hay propiedades públicas</em>
+									</section>
+									<section class="span4">
+										<em>No hay constantes</em>
+									</section>
+								</section>
+								<section class="row-fluid protected">
+									<section class="span4">
+										<em>No hay métodos protegidos </em>
+									</section>
+									<section class="span4">
+										<em>No hay propiedades protegidas</em>
+									</section>
+									<section class="span4">
+										<em>N/A</em>
+									</section>
+								</section>
+								<section class="row-fluid private">
+									<section class="span4">
+										<em>No hay métodos privados</em>
+									</section>
+									<section class="span4">
+										<a href="noticeClass.html#property_id" class="">$id</a><br />
+										<a href="noticeClass.html#property_title" class="">$title</a><br />
+										<a href="noticeClass.html#property_header" class="">$header</a><br />
+										<a href="noticeClass.html#property_text" class="">$text</a><br />
+										<a href="noticeClass.html#property_category" class="">$category</a><br />
+										<a href="noticeClass.html#property_channel" class="">$channel</a><br />
+										<a href="noticeClass.html#property_status" class="">$status</a><br />
+										<a href="noticeClass.html#property_author" class="">$author</a><br />
+										<a href="noticeClass.html#property_dateCreated" class="">$dateCreated</a><br />
+										<a href="noticeClass.html#property_dateEdited" class="">$dateEdited</a><br />
+									</section>
+									<section class="span4">
+										<em>N/A</em>
+									</section>
+								</section>
+							</section>
+						</div>
+						<aside class="span4 detailsbar">
+							<dl>
+								<dt>File</dt>
+								<dd>
+									<a href="files/library-notice-class.html"
+										><div class="path-wrapper">library/notice.class.php</div></a
+									>
+								</dd>
+								<dt>Package</dt>
+								<dd><div class="namespace-wrapper">Application</div></dd>
+								<dt>Class hierarchy</dt>
+								<dd class="hierarchy">
+									<div class="namespace-wrapper">\noticeClass</div>
+								</dd>
+							</dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<a id="properties" name="properties"></a>
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<h2>Propiedades</h2>
+						</div>
+						<aside class="span4 detailsbar"></aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_id" name="property_id" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$id</h3>
+								<pre class="signature">$id : int</pre>
+								<p><em>Identificador</em></p>
+
+								<h4>Tipo</h4>
+								<a href="int"><abbr title="int">int</abbr></a>
+								&mdash; recibida por método GET
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_title" name="property_title" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$title</h3>
+								<pre class="signature">$title : string</pre>
+								<p><em>Título</em></p>
+
+								<h4>Tipo</h4>
+								<a href="string"><abbr title="string">string</abbr></a>
+								&mdash; recibida por método GET
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_header" name="property_header" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$header</h3>
+								<pre class="signature">$header : string</pre>
+								<p><em>Ruta de la imagen con extensión &quot;.png&quot; o &quot;.jpg&quot;</em></p>
+
+								<h4>Tipo</h4>
+								<a href="string"><abbr title="string">string</abbr></a>
+								&mdash; recibida por método GET
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_text" name="property_text" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$text</h3>
+								<pre class="signature">$text : string</pre>
+								<p><em>Contenido principal de la noticia</em></p>
+
+								<h4>Tipo</h4>
+								<a href="string"><abbr title="string">string</abbr></a>
+								&mdash; recibida por método GET
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_category" name="property_category" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$category</h3>
+								<pre class="signature">$category : string</pre>
+								<p><em>Categoría o etiqueta</em></p>
+
+								<h4>Tipo</h4>
+								<a href="string"><abbr title="string">string</abbr></a>
+								&mdash; recibida por método GET
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_channel" name="property_channel" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$channel</h3>
+								<pre class="signature">$channel : int</pre>
+								<p>
+									<em>Prioridad para su búsqueda en relación a la tabla &quot;list_category&quot;</em>
+								</p>
+
+								<h4>Tipo</h4>
+								<a href="int"><abbr title="int">int</abbr></a>
+								&mdash; recibida por método GET
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_status" name="property_status" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$status</h3>
+								<pre class="signature">$status : int</pre>
+								<p>
+									<em
+										>Estado actual de visibilidad o revisión en relación a la tabla
+										&quot;list_status&quot;</em
+									>
+								</p>
+
+								<h4>Tipo</h4>
+								<a href="int"><abbr title="int">int</abbr></a>
+								&mdash; recibida por método GET
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_author" name="property_author" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$author</h3>
+								<pre class="signature">$author : int</pre>
+								<p>
+									<em
+										>Autor, escritor o publicador de la noticia en relación a la tabla
+										&quot;list_user&quot;</em
+									>
+								</p>
+
+								<h4>Tipo</h4>
+								<a href="int"><abbr title="int">int</abbr></a>
+								&mdash; recibida por método GET
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_dateCreated" name="property_dateCreated" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$dateCreated</h3>
+								<pre class="signature">$dateCreated : string</pre>
+								<p><em>Fecha de publicación</em></p>
+
+								<h4>Tipo</h4>
+								<a href="string"><abbr title="string">string</abbr></a>
+								&mdash; recibida por método GET
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_dateEdited" name="property_dateEdited" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$dateEdited</h3>
+								<pre class="signature">$dateEdited : string</pre>
+								<p><em>Última fecha de actualización</em></p>
+
+								<h4>Tipo</h4>
+								<a href="string"><abbr title="string">string</abbr></a>
+								&mdash; recibida por método GET
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<a id="methods" name="methods"></a>
+					<div class="row-fluid">
+						<div class="span8 content class"><h2>Métodos</h2></div>
+						<aside class="span4 detailsbar"></aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method___construct" name="method___construct" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">__construct()</h3>
+
+								<pre
+									class="signature"
+									style="margin-right: 54px"
+								>__construct(int  <span class="argument">$id</span>, string  <span class="argument">$title = &quot;&quot;</span>, string  <span class="argument">$header = &quot;&quot;</span>, string  <span class="argument">$text = &quot;&quot;</span>, string  <span class="argument">$category = &quot;&quot;</span>, int  <span class="argument">$channel</span>, int  <span class="argument">$status</span>, int  <span class="argument">$author</span>, string  <span class="argument">$dateCreated = &quot;&quot;</span>, string  <span class="argument">$dateEdited = &quot;&quot;</span>) : mixed</pre>
+								<p><em></em></p>
+
+								<h4>Parámetros</h4>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<td>int</td>
+										<td>$id</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>$title</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>$header</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>$text</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>$category</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>$channel</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>$status</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>int</td>
+										<td>$author</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>$dateCreated</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>$dateEdited</td>
+										<td></td>
+									</tr>
+								</table>
+
+								<h4>Returns</h4>
+								mixed &mdash;
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="noticeClass.html"><div class="path-wrapper">\noticeClass</div></a>
+								</dd>
+							</dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_createNotice" name="method_createNotice" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">createNotice()</h3>
+
+								<pre class="signature" style="margin-right: 54px">createNotice() : string</pre>
+								<p>
+									<em
+										>Se encarga de crear una noticia con los respectivos parametros comprobando cada
+										uno de ellos</em
+									>
+								</p>
+
+								<h4>Returns</h4>
+								string &mdash;
+								<p>
+									devuelve un mensaje de éxito o un mensaje de error correspondiente a la operacion
+									realizada
+								</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="noticeClass.html"><div class="path-wrapper">\noticeClass</div></a>
+								</dd>
+							</dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_editNotice" name="method_editNotice" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">editNotice()</h3>
+
+								<pre class="signature" style="margin-right: 54px">editNotice() : string</pre>
+								<p>
+									<em
+										>Se encarga de editar una noticia seleccionada siendo actualizada con los
+										parametros recibidos</em
+									>
+								</p>
+
+								<h4>Returns</h4>
+								string &mdash;
+								<p>
+									devuelve un mensaje de éxito o un mensaje de error correspondiente a la operacion
+									realizada
+								</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="noticeClass.html"><div class="path-wrapper">\noticeClass</div></a>
+								</dd>
+							</dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_editNoticeStatus" name="method_editNoticeStatus" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">editNoticeStatus()</h3>
+
+								<pre class="signature" style="margin-right: 54px">editNoticeStatus() : string</pre>
+								<p><em>Se encarga de actualizar el estado de una noticia seleccionada</em></p>
+
+								<h4>Returns</h4>
+								string &mdash;
+								<p>
+									devuelve un mensaje de éxito o un mensaje de error correspondiente a la operacion
+									realizada
+								</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="noticeClass.html"><div class="path-wrapper">\noticeClass</div></a>
+								</dd>
+							</dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_deleteNotice" name="method_deleteNotice" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">deleteNotice()</h3>
+
+								<pre class="signature" style="margin-right: 54px">deleteNotice() : string</pre>
+								<p><em>Se encarga de eliminar una noticia seleccionada</em></p>
+
+								<h4>Returns</h4>
+								string &mdash;
+								<p>
+									devuelve un mensaje de éxito o un mensaje de error correspondiente a la operacion
+									realizada
+								</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="noticeClass.html"><div class="path-wrapper">\noticeClass</div></a>
+								</dd>
+							</dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_generalNoticeSearch" name="method_generalNoticeSearch" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">generalNoticeSearch()</h3>
+
+								<pre
+									class="signature"
+									style="margin-right: 54px"
+								>generalNoticeSearch(string  <span class="argument">$campo</span>, string  <span class="argument">$valor</span>) : object</pre>
+								<p>
+									<em
+										>Selecciona aquellas noticias que identifiquen el valor de búsqueda en el campo
+										elegido</em
+									>
+								</p>
+
+								<h4>Parámetros</h4>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<td>string</td>
+										<td>$campo</td>
+										<td><p>identifica el campo a utilizar para la búsqueda</p></td>
+									</tr>
+									<tr>
+										<td>string</td>
+										<td>$valor</td>
+										<td><p>identifica la cadena de búsqueda</p></td>
+									</tr>
+								</table>
+
+								<h4>Returns</h4>
+								object &mdash;
+								<p>devuelve un objeto con los registros encontrados de la consulta</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="noticeClass.html"><div class="path-wrapper">\noticeClass</div></a>
+								</dd>
+							</dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a
+								id="method_searchActiveNotification"
+								name="method_searchActiveNotification"
+								class="anchor"
+							></a>
+							<article class="method">
+								<h3 class="public">searchActiveNotification()</h3>
+
+								<pre
+									class="signature"
+									style="margin-right: 54px"
+								>searchActiveNotification(string  <span class="argument">$status</span>) : object</pre>
+								<p><em>Selecciona aquellas noticias con un estado específico</em></p>
+
+								<h4>Parámetros</h4>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<td>string</td>
+										<td>$status</td>
+										<td><p>identifica el nombre del estado a buscar</p></td>
+									</tr>
+								</table>
+
+								<h4>Returns</h4>
+								object &mdash;
+								<p>devuelve un objeto con los registros encontrados de la consulta</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="noticeClass.html"><div class="path-wrapper">\noticeClass</div></a>
+								</dd>
+							</dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_searchNotification" name="method_searchNotification" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">searchNotification()</h3>
+
+								<pre
+									class="signature"
+									style="margin-right: 54px"
+								>searchNotification(string  <span class="argument">$title</span>) : object</pre>
+								<p>
+									<em
+										>Selecciona aquellas noticias en las que encuentre el valor de búsqueda en su
+										título</em
+									>
+								</p>
+
+								<h4>Parámetros</h4>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<td>string</td>
+										<td>$title</td>
+										<td><p>identifica el valor de búsqueda</p></td>
+									</tr>
+								</table>
+
+								<h4>Returns</h4>
+								object &mdash;
+								<p>devuelve un objeto con los registros encontrados de la consulta</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="noticeClass.html"><div class="path-wrapper">\noticeClass</div></a>
+								</dd>
+							</dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_textNoticeSearch" name="method_textNoticeSearch" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">textNoticeSearch()</h3>
+
+								<pre
+									class="signature"
+									style="margin-right: 54px"
+								>textNoticeSearch(string  <span class="argument">$valor</span>) : object</pre>
+								<p>
+									<em
+										>Selecciona aquellas noticias en las que encuentre el valor de búsqueda en su
+										contenido, título o categoría</em
+									>
+								</p>
+
+								<h4>Parámetros</h4>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<td>string</td>
+										<td>$valor</td>
+										<td><p>identifica el valor de búsqueda</p></td>
+									</tr>
+								</table>
+
+								<h4>Returns</h4>
+								object &mdash;
+								<p>devuelve un objeto con los registros encontrados de la consulta</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="noticeClass.html"><div class="path-wrapper">\noticeClass</div></a>
+								</dd>
+							</dl>
+							<h2>Tags</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta charset="utf-8" />
+		<title>Documentación</title>
+		<meta name="author" content="" />
+		<meta name="description" content="" />
+
+		<link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet" />
+		<link href="../css/font-awesome.min.css" rel="stylesheet" />
+		<link href="../css/prism.css" rel="stylesheet" media="all" />
+		<link href="../css/template.css" rel="stylesheet" media="all" />
+
+		<!--[if lt IE 9]>
+			<script src="../js/html5.js"></script>
+		<![endif]-->
+		<script src="../js/jquery-1.11.0.min.js"></script>
+		<script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/jquery.smooth-scroll.js"></script>
+		<script src="../js/prism.min.js"></script>
+		<!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+		<script type="text/javascript">
+			function loadExternalCodeSnippets() {
+				Array.prototype.slice.call(document.querySelectorAll("pre[data-src]")).forEach(function (pre) {
+					var src = pre.getAttribute("data-src").replace(/\\/g, "/");
+					var extension = (src.match(/\.(\w+)$/) || [, ""])[1];
+					var language = "php";
+
+					var code = document.createElement("code");
+					code.className = "language-" + language;
+
+					pre.textContent = "";
+
+					code.textContent = "Loading…";
+
+					pre.appendChild(code);
+
+					var xhr = new XMLHttpRequest();
+
+					xhr.open("GET", src, true);
+
+					xhr.onreadystatechange = function () {
+						if (xhr.readyState == 4) {
+							if (xhr.status < 400 && xhr.responseText) {
+								code.textContent = xhr.responseText;
+
+								Prism.highlightElement(code);
+							} else if (xhr.status >= 400) {
+								code.textContent = "✖ Error " + xhr.status + " while fetching file: " + xhr.statusText;
+							} else {
+								code.textContent =
+									"✖ Error: File does not exist, is empty or trying to view from localhost";
+							}
+						}
+					};
+
+					xhr.send(null);
+				});
+			}
+
+			$(document).ready(function () {
+				loadExternalCodeSnippets();
+			});
+			$("#source-view").on("shown", function () {
+				loadExternalCodeSnippets();
+			});
+		</script>
+
+		<link rel="icon" href="../images/favicon.png" />
+	</head>
+	<body>
+		<div class="navbar navbar-fixed-top">
+			<div class="navbar-inner">
+				<div class="container">
+					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+						<i class="icon-ellipsis-vertical"></i>
+					</a>
+					<a class="brand" href="../index.html">Documentación - BDT pasantías 2021</a>
+
+					<div class="nav-collapse">
+						<ul class="nav pull-right">
+							<li class="dropdown" id="reports-menu">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									Reportes <b class="caret"></b>
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a href="reports/markers.html">
+											<i class="icon-list-alt"></i>&#160;Marcadores
+											<span class="label label-info pull-right">5</span>
+										</a>
+									</li>
+									<li>
+										<a href="reports/deprecated.html">
+											<i class="icon-list-alt"></i>&#160;Obsoletos
+											<span class="label label-info pull-right">0</span>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--<div class="go_to_top">-->
+			<!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+			<!--</div>-->
+		</div>
+
+		<div id="___" class="container-fluid">
+			<section class="row-fluid">
+				<div class="span2 sidebar">
+					<div class="accordion" style="margin-bottom: 0">
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a
+									class="accordion-toggle"
+									data-toggle="collapse"
+									data-target="#namespace-1519822613"
+								></a>
+								<a href="namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+							</div>
+							<div id="namespace-1519822613" class="accordion-body collapse in">
+								<div class="accordion-inner">
+									<ul>
+										<li class="class">
+											<a href="../"><abbr title="\Inicio">Inicio</abbr></a>
+										</li>
+										<li class="class">
+											<a href="commentClass.html"
+												><abbr title="\commentClass">commentClass</abbr></a
+											>
+										</li>
+										<li class="class">
+											<a href="noticeClass.html"><abbr title="\noticeClass">noticeClass</abbr></a>
+										</li>
+										<li class="class">
+											<a href="PDOClass.html"><abbr title="\PDOClass">PDOClass</abbr></a>
+										</li>
+										<li class="class">
+											<a href="searchAction.html"
+												><abbr title="\searchAction">searchAction</abbr></a
+											>
+										</li>
+										<li class="class">
+											<a href="userClass.html"><abbr title="\userClass">userClass</abbr></a>
+										</li>
+										<li class="class">
+											<a href="../urlsGetMethod.html"
+												><abbr title="\userClass">URLS - GetMethod</abbr></a
+											>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="row-fluid">
+				<div class="span10 offset2">
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<nav>
+								<a href="namespaces/default.html"><abbr title="\"></abbr></a>
+								<i class="icon-level-up"></i>
+							</nav>
+
+							<h1><small>\</small>userClass</h1>
+							<p>
+								<em
+									>Es la clase que se encarga de realizar los llamados a todas aquellas Funciones y
+									Stored Procedures relacionadas a la tabla de Usuarios</em
+								>
+							</p>
+
+							<section id="summary">
+								<h2>Resumen</h2>
+								<section class="row-fluid heading">
+									<section class="span4">
+										<a href="#methods">Metodos</a>
+									</section>
+									<section class="span4">
+										<a href="#properties">Propiedades</a>
+									</section>
+									<section class="span4">
+										<a href="#constants">Constantes</a>
+									</section>
+								</section>
+								<section class="row-fluid public">
+									<section class="span4">
+										<a href="userClass.html#method___construct" class="">__construct()</a><br />
+										<a href="userClass.html#method_getRankUser" class="">getRankUser()</a><br />
+										<a href="userClass.html#method_passRecovery" class="">passRecovery()</a><br />
+										<a href="userClass.html#method_insertUser" class="">insertUser()</a><br />
+										<a href="userClass.html#method_restrictNotice" class="">restrictNotice()</a
+										><br />
+										<a href="userClass.html#method_getAgeUser" class="">getAgeUser()</a><br />
+										<a href="userClass.html#method_changeTypeUser" class="">changeTypeUser()</a
+										><br />
+										<a href="userClass.html#method_changePassword" class="">changePassword()</a
+										><br />
+										<a href="userClass.html#method_searchUserByDocument" class=""
+											>searchUserByDocument()</a
+										><br />
+										<a href="userClass.html#method_searchUserByStatus" class=""
+											>searchUserByStatus()</a
+										><br />
+										<a href="userClass.html#method_searchUserByPhone" class=""
+											>searchUserByPhone()</a
+										><br />
+										<a href="userClass.html#method_searchUserByName" class="">searchUserByName()</a
+										><br />
+										<a href="userClass.html#method_searchUserById" class="">searchUserById()</a
+										><br />
+										<a href="userClass.html#method_searchUserByEmail" class=""
+											>searchUserByEmail()</a
+										><br />
+									</section>
+									<section class="span4">
+										<em>No hay Propiedades Públicas</em>
+									</section>
+									<section class="span4">
+										<em>No hay constantes</em>
+									</section>
+								</section>
+								<section class="row-fluid protected">
+									<section class="span4">
+										<em>No hay Metodos Protegidos</em>
+									</section>
+									<section class="span4">
+										<em>No hay Propiedades Protegidas</em>
+									</section>
+									<section class="span4">
+										<em>N/A</em>
+									</section>
+								</section>
+								<section class="row-fluid private">
+									<section class="span4">
+										<em>No hay Metodos Privados</em>
+									</section>
+									<section class="span4">
+										<a href="userClass.html#property_id" class="">$id</a><br />
+										<a href="userClass.html#property_email" class="">$email</a><br />
+										<a href="userClass.html#property_password" class="">$password</a><br />
+										<a href="userClass.html#property_name" class="">$name</a><br />
+										<a href="userClass.html#property_typeDocument" class="">$typeDocument</a><br />
+										<a href="userClass.html#property_documentUser" class="">$documentUser</a><br />
+										<a href="userClass.html#property_fechaNac" class="">$fechaNac</a><br />
+										<a href="userClass.html#property_phoneUser" class="">$phoneUser</a><br />
+										<a href="userClass.html#property_typeUser" class="">$typeUser</a><br />
+										<a href="userClass.html#property_confirmPassword" class="">$confirmPassword</a
+										><br />
+										<a href="userClass.html#property_newConfirmPassword" class=""
+											>$newConfirmPassword</a
+										><br />
+									</section>
+									<section class="span4">
+										<em>N/A</em>
+									</section>
+								</section>
+							</section>
+						</div>
+						<aside class="span4 detailsbar">
+							<dl>
+								<dt>Archivo</dt>
+								<dd>
+									<a href="files/library-user-class.html"
+										><div class="path-wrapper">library/user.class.php</div></a
+									>
+								</dd>
+								<dt>Paquete</dt>
+								<dd><div class="namespace-wrapper">Aplicacion</div></dd>
+								<dt>Jerarquia de la Clase</dt>
+								<dd class="hierarchy">
+									<div class="namespace-wrapper">\userClass</div>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<a id="properties" name="properties"></a>
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<h2>Propiedades</h2>
+						</div>
+						<aside class="span4 detailsbar"></aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_id" name="property_id" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$id</h3>
+								<pre class="signature">$id : int</pre>
+								<p><em>Variable Id</em></p>
+
+								<h4>Tipo</h4>
+								<a>int</a>
+								&mdash; Esta variable se encarga de almacenar el Identificador del usuario
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_email" name="property_email" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$email</h3>
+								<pre class="signature">$email : string</pre>
+								<p><em>Email</em></p>
+
+								<h4>Tipo</h4>
+								<a>string</a>
+								&mdash; Esta variable se encarga de almacenar el Email del usuario
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_password" name="property_password" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$password</h3>
+								<pre class="signature">$password : string</pre>
+								<p><em>Password</em></p>
+
+								<h4>Tipo</h4>
+								<a href="string"><abbr title="string">string</abbr></a>
+								&mdash; Esta variable se encarga de almacenar la Contraseña del usuario
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_name" name="property_name" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$name</h3>
+								<pre class="signature">$name : string</pre>
+								<p><em>Name</em></p>
+
+								<h4>Tipo</h4>
+								<a href="string"><abbr title="string">string</abbr></a>
+								&mdash; Esta variable se encarga de almacenar el Nombre del usuario
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_typeDocument" name="property_typeDocument" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$typeDocument</h3>
+								<pre class="signature">$typeDocument : int</pre>
+								<p><em>Type Document</em></p>
+
+								<h4>Tipo</h4>
+								<a href="int"><abbr title="int">int</abbr></a>
+								&mdash; Esta variable se encarga de almacenar el tipo de documento del usuario
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_documentUser" name="property_documentUser" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$documentUser</h3>
+								<pre class="signature">$documentUser : int</pre>
+								<p><em>Document User</em></p>
+
+								<h4>Tipo</h4>
+								<a href="int"><abbr title="int">int</abbr></a>
+								&mdash; Esta variable se encarga de almacenar el Documento del usuario
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_fechaNac" name="property_fechaNac" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$fechaNac</h3>
+								<pre class="signature">$fechaNac : string</pre>
+								<p><em>Fecha Nacimiento</em></p>
+
+								<h4>Tipo</h4>
+								<a href="string"><abbr title="string">string</abbr></a>
+								&mdash; Esta variable se encarga de almacenar la Fecha de Nacimiento del usuario
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_phoneUser" name="property_phoneUser" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$phoneUser</h3>
+								<pre class="signature">$phoneUser : int</pre>
+								<p><em>Phone User</em></p>
+
+								<h4>Tipo</h4>
+								<a href="int"><abbr title="int">int</abbr></a>
+								&mdash; Esta variable se encarga de almacenar el Telefono del usuario
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_typeUser" name="property_typeUser" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$typeUser</h3>
+								<pre class="signature">$typeUser : int</pre>
+								<p><em>Type User</em></p>
+
+								<h4>Tipo</h4>
+								<a href="int"><abbr title="int">int</abbr></a>
+								&mdash; Esta variable se encarga de almacenar el Tipo de usuario
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_confirmPassword" name="property_confirmPassword" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$confirmPassword</h3>
+								<pre class="signature">$confirmPassword : string</pre>
+								<p><em>Confirm Password</em></p>
+
+								<h4>Tipo</h4>
+								<a href="string"><abbr title="string">string</abbr></a>
+								&mdash; Esta variable se encarga de almacenar la Confirmacion de Contraseña del usuario
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="property_newConfirmPassword" name="property_newConfirmPassword" class="anchor"></a>
+							<article class="property">
+								<h3 class="private">$newConfirmPassword</h3>
+								<pre class="signature">$newConfirmPassword : string</pre>
+								<p><em>New Confirm Password</em></p>
+
+								<h4>Tipo</h4>
+								<a href="string"><abbr title="string">string</abbr></a>
+								&mdash; Esta variable se encarga de almacenar la segunda Confirmacion de Contraseña del
+								usuario
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl></dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<a id="methods" name="methods"></a>
+					<div class="row-fluid">
+						<div class="span8 content class"><h2>Metodos</h2></div>
+						<aside class="span4 detailsbar"></aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method___construct" name="method___construct" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">__construct()</h3>
+
+								<pre
+									class="signature"
+									style="margin-right: 54px"
+								>__construct(mixed  <span class="argument">$id</span>, mixed  <span class="argument">$email = &quot;&quot;</span>, mixed  <span class="argument">$password = &quot;&quot;</span>, mixed  <span class="argument">$name = &quot;&quot;</span>, mixed  <span class="argument">$typeDocument</span>, mixed  <span class="argument">$documentUser</span>, mixed  <span class="argument">$fechaNac = &quot;&quot;</span>, mixed  <span class="argument">$phoneUser</span>, mixed  <span class="argument">$typeUser</span>, mixed  <span class="argument">$confirmPassword = &quot;&quot;</span>, mixed  <span class="argument">$newConfirmPassword = &quot;&quot;</span>) : void</pre>
+								<p><em>Constructor único de la clase Usuario.</em></p>
+
+								<h4>Parametros</h4>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<td>mixed</td>
+										<td>$id</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>mixed</td>
+										<td>$email</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>mixed</td>
+										<td>$password</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>mixed</td>
+										<td>$name</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>mixed</td>
+										<td>$typeDocument</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>mixed</td>
+										<td>$documentUser</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>mixed</td>
+										<td>$fechaNac</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>mixed</td>
+										<td>$phoneUser</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>mixed</td>
+										<td>$typeUser</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>mixed</td>
+										<td>$confirmPassword</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>mixed</td>
+										<td>$newConfirmPassword</td>
+										<td></td>
+									</tr>
+								</table>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_getRankUser" name="method_getRankUser" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">getRankUser()</h3>
+
+								<pre class="signature" style="margin-right: 54px">getRankUser() : string</pre>
+								<p>
+									<em
+										>getRankUser se encarga de realizar el llamado a la función getRankUser la cual
+										se encuentra ubicada en la base de datos</em
+									>
+								</p>
+
+								<h4>Returns</h4>
+								string &mdash;
+								<p>Mensaje que devuelve el rango del usuario en cuestion</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_passRecovery" name="method_passRecovery" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">passRecovery()</h3>
+
+								<pre class="signature" style="margin-right: 54px">passRecovery() : string</pre>
+								<p>
+									<em
+										>passRecovery se encarga de realizar el llamado a la función passRecovery la
+										cual se encuentra ubicada en la base de datos</em
+									>
+								</p>
+
+								<h4>Returns</h4>
+								string &mdash;
+								<p>
+									Mensaje que devuelve el estado en el que se encuentra el email insertado, sea valido
+									o no
+								</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_insertUser" name="method_insertUser" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">insertUser()</h3>
+
+								<pre class="signature" style="margin-right: 54px">insertUser() : string</pre>
+								<p>
+									<em
+										>insertUser se encarga de realizar el llamado a la función insertUser la cual se
+										encuentra ubicada en la base de datos</em
+									>
+								</p>
+
+								<h4>Returns</h4>
+								string &mdash;
+								<p>Mensaje que devuelve si el procedimiento se pudo completar correctamente</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_restrictNotice" name="method_restrictNotice" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">restrictNotice()</h3>
+
+								<pre class="signature" style="margin-right: 54px">restrictNotice() : string</pre>
+								<p>
+									<em
+										>restrictNotice se encarga de realizar el llamado a la función restrictNotice la
+										cual se encuentra ubicada en la base de datos</em
+									>
+								</p>
+
+								<h4>Returns</h4>
+								string &mdash;
+								<p>
+									Mensaje que aporta informacion acerca del acceso que se obtiene a ciertas noticias
+								</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_getAgeUser" name="method_getAgeUser" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">getAgeUser()</h3>
+
+								<pre class="signature" style="margin-right: 54px">getAgeUser() : string</pre>
+								<p>
+									<em
+										>getAgeUser se encarga de realizar el llamado a la función getAgeUser la cual se
+										encuentra ubicada en la base de datos</em
+									>
+								</p>
+
+								<h4>Returns</h4>
+								string &mdash;
+								<p>Mensaje que devuelve la edad del usuario</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_changeTypeUser" name="method_changeTypeUser" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">changeTypeUser()</h3>
+
+								<pre class="signature" style="margin-right: 54px">changeTypeUser() : string</pre>
+								<p>
+									<em
+										>changeTypeUser se encarga de realizar el llamado a la función changeTypeUser la
+										cual se encuentra ubicada en la base de datos</em
+									>
+								</p>
+
+								<h4>Returns</h4>
+								string &mdash;
+								<p>Mensaje que especifica si el tipo de usuario pudo ser cambiado con exito</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_changePassword" name="method_changePassword" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">changePassword()</h3>
+
+								<pre class="signature" style="margin-right: 54px">changePassword() : string</pre>
+								<p>
+									<em
+										>changePassword se encarga de realizar el llamado a la función changePassword la
+										cual se encuentra ubicada en la base de datos</em
+									>
+								</p>
+
+								<h4>Returns</h4>
+								string &mdash;
+								<p>Mensaje que confirma el cambio de contraseña satisfactorio</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_searchUserByDocument" name="method_searchUserByDocument" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">searchUserByDocument()</h3>
+
+								<pre
+									class="signature"
+									style="margin-right: 54px"
+								>searchUserByDocument(int  <span class="argument">$searchDocumentUser</span>) : object</pre>
+								<p>
+									<em
+										>searchUserByDocument muestra los resultados encontrados de buscar usuarios a
+										partir del documento</em
+									>
+								</p>
+
+								<h4>Parametros</h4>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<td>int</td>
+										<td>$searchDocumentUser</td>
+										<td><p>determina el valor que se aplicara para realizar la busqueda</p></td>
+									</tr>
+								</table>
+
+								<h4>Returns</h4>
+								object &mdash;
+								<p>Devuelve todos los resultados encontrados con esos parametros</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_searchUserByStatus" name="method_searchUserByStatus" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">searchUserByStatus()</h3>
+
+								<pre
+									class="signature"
+									style="margin-right: 54px"
+								>searchUserByStatus(string  <span class="argument">$userStatus</span>) : object</pre>
+								<p>
+									<em
+										>searchUserByStatus muestra los resultados encontrados de buscar usuarios a
+										partir del estado del mismo</em
+									>
+								</p>
+
+								<h4>Parametros</h4>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<td>string</td>
+										<td>$userStatus</td>
+										<td><p>determina el valor que se aplicara para realizar la busqueda</p></td>
+									</tr>
+								</table>
+
+								<h4>Returns</h4>
+								object &mdash;
+								<p>Devuelve todos los resultados encontrados con esos parametros</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_searchUserByPhone" name="method_searchUserByPhone" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">searchUserByPhone()</h3>
+
+								<pre
+									class="signature"
+									style="margin-right: 54px"
+								>searchUserByPhone(int  <span class="argument">$userPhone</span>) : object</pre>
+								<p>
+									<em
+										>searchUserByPhone muestra los resultados encontrados de buscar usuarios a
+										partir del telefono proporcionado</em
+									>
+								</p>
+
+								<h4>Parametros</h4>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<td>int</td>
+										<td>$userPhone</td>
+										<td><p>determina el valor que se aplicara para realizar la busqueda</p></td>
+									</tr>
+								</table>
+
+								<h4>Returns</h4>
+								object &mdash;
+								<p>Devuelve todos los resultados encontrados con esos parametros</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_searchUserByName" name="method_searchUserByName" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">searchUserByName()</h3>
+
+								<pre
+									class="signature"
+									style="margin-right: 54px"
+								>searchUserByName(string  <span class="argument">$userName</span>) : object</pre>
+								<p>
+									<em
+										>searchUserByName muestra los resultados encontrados de buscar usuarios a partir
+										del nombre proporcionado</em
+									>
+								</p>
+
+								<h4>Parametros</h4>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<td>string</td>
+										<td>$userName</td>
+										<td><p>determina el valor que se aplicara para realizar la busqueda</p></td>
+									</tr>
+								</table>
+
+								<h4>Returns</h4>
+								object &mdash;
+								<p>Devuelve todos los resultados encontrados con esos parametros</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_searchUserById" name="method_searchUserById" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">searchUserById()</h3>
+
+								<pre
+									class="signature"
+									style="margin-right: 54px"
+								>searchUserById(int  <span class="argument">$userId</span>) : object</pre>
+								<p>
+									<em
+										>searchUserById muestra los resultados encontrados de buscar usuarios a partir
+										del ID proporcionado</em
+									>
+								</p>
+
+								<h4>Parametros</h4>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<td>int</td>
+										<td>$userId</td>
+										<td><p>determina el valor que se aplicara para realizar la busqueda</p></td>
+									</tr>
+								</table>
+
+								<h4>Returns</h4>
+								object &mdash;
+								<p>Devuelve todos los resultados encontrados con esos parametros</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+
+					<div class="row-fluid">
+						<div class="span8 content class">
+							<a id="method_searchUserByEmail" name="method_searchUserByEmail" class="anchor"></a>
+							<article class="method">
+								<h3 class="public">searchUserByEmail()</h3>
+
+								<pre
+									class="signature"
+									style="margin-right: 54px"
+								>searchUserByEmail(string  <span class="argument">$userEmail</span>) : object</pre>
+								<p>
+									<em
+										>searchUserByEmail muestra los resultados encontrados de buscar usuarios a
+										partir del email proporcionado</em
+									>
+								</p>
+
+								<h4>Parametros</h4>
+								<table class="table table-condensed table-hover">
+									<tr>
+										<td>string</td>
+										<td>$userEmail</td>
+										<td><p>determina el valor que se aplicara para realizar la busqueda</p></td>
+									</tr>
+								</table>
+
+								<h4>Returns</h4>
+								object &mdash;
+								<p>Devuelve todos los resultados encontrados con esos parametros</p>
+							</article>
+						</div>
+						<aside class="span4 detailsbar">
+							<h1><i class="icon-arrow-down"></i></h1>
+							<dl>
+								<dt>Heredado de:</dt>
+								<dd>
+									<a href="userClass.html"><div class="path-wrapper">\userClass</div></a>
+								</dd>
+							</dl>
+							<h2>Etiquetas</h2>
+							<table class="table table-condensed">
+								<tr>
+									<td colspan="2"><em>No encontradas</em></td>
+								</tr>
+							</table>
+						</aside>
+					</div>
+				</div>
+			</section>
+		</div>
+	</body>
+</html>

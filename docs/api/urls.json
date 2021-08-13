@@ -1,0 +1,48 @@
+{
+	"userclass": {
+		"function": {
+			"getRankUser": "?action=getRankUser&email=&password=",
+			"passRecovery": "?action=passRecovery&email=",
+			"insertUser": "?action=insertUser&name=&email=&typeDocument=&documentUser=&fechaNac=&phoneUser=&typeUser=password=&confirmPassword=",
+			"restrictNotice": "?action=restrictNotice&id=",
+			"changeTypeUser": "?action=changeTypeUser&email=&typeUser=&password=",
+			"changePassword": "?action=changePassword&email=&password=&confirmPassword=&newConfirmPassword=",
+			"getAgeUser": "?action=getAgeUser&id="
+		},
+		"SP": {
+			"searchUserByDocument": "?action=searchUserByStatus&searchDocumentUser=",
+			"searchUserByStatus": "?action=searchUserByStatus&userStatus=",
+			"searchUserByPhone": "?action=searchUserByPhone&userPhone=",
+			"searchUserByName": "?action=searchUserByName&userName=",
+			"searchUserById": "?action=searchUserById&userId=",
+			"searchUserByEmail": "?action=searchUserByEmail&userEmail="
+		}
+	},
+	"commentClass": {
+		"function": {
+			"insertReaction": "?action=insertReaction&idComment=&authorReaction=&contentReaction=",
+			"deleteReaction": "?action=deleteReaction&idReaction=",
+			"createComment": "?action=createComment&author=¬ice=&text=",
+			"editComment": "?action=editComment&idComment=&author=&text=",
+			"deleteComment": "?action=deleteComment&idComment=&author="
+		},
+		"SP": {
+			"searchCommentByAuthor": "?action=searchCommentByAuthor&author=",
+			"searchCommentByNotice": "?action=searchCommentByNotice&author="
+		}
+	},
+	"noticeClass": {
+		"function": {
+			"createNotice": "?action=createNotice&title=&header=&text=&category=&channel=&status=&author=",
+			"editNotice": "?action=editNotice&id=&title=&header=&text=&category=&channel=&author=",
+			"editNoticeStatus": "?action=editNotice&id=&status=",
+			"deleteNotice": "?action=deleteNotice&id=&author="
+		},
+		"SP": {
+			"generalNoticeSearch": "?action=generalNoticeSearch&campo=&valor=",
+			"searchActiveNotification": "?action=searchActiveNotification&campo=&status=",
+			"searchNotification": "?action=searchNotification&title=",
+			"textNoticeSearch": "?action=textNoticeSearch&title="
+		}
+	}
+}

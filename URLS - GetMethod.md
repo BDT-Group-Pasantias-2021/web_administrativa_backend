@@ -19,7 +19,6 @@
 | searchUserById       | ?action=searchUserById&userId=                 |
 | searchUserByEmail    | ?action=searchUserByEmail&userEmail=           |
 
-
 ## Comment Class
 
 | Function       | URL                                                               |

@@ -1,7 +1,7 @@
 <?php
     
     /**
-     * noticeClass es utilizada para crear un nuevo objeto noticia el cual almacena las funciones y store procedures correspondiente
+     * noticeClass es utilizada para crear un nuevo objeto noticia el cual almacena las funciones y stored procedures correspondiente
      * tanto para búsquedas y su edición, creación y eliminación
      */
     class noticeClass{        
