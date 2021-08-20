@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="./css/tabla.css" />
+	</head>
+	<script>
+		let url = "https://jsonplaceholder.typicode.com/users";
+		fetch(url)
+			.then((response) => response.json())
+			.then((data) => mostrarData(data))
+			.catch((error) => console.log(error));
+
+		const mostrarData = (data) => {
+			console.log(data);
+			let body = "";
+			for (let i = 0; i < data.length; i++) {
+				body += `<tr><td>${data[i].id}</td><td>${data[i].name}</td><td>${data[i].email}</td></tr>`;
+			}
+			document.getElementById("data").innerHTML = body;
+		};
+	</script>
+
+	<header>
+		<div class="hamburger-icon" id="icon">
+			<div class="icon-1" id="a"></div>
+			<div class="icon-2" id="b"></div>
+			<div class="icon-3" id="c"></div>
+			<div class="clear"></div>
+		</div>
+
+		<nav id="nav">
+			<ul>
+				<li>Usuarios</li>
+				<li>Comentarios</li>
+				<li>Noticias</li>
+			</ul>
+		</nav>
+
+		<div class="dark-blue" id="blue"></div>
+
+		<section class="content">
+			<h1>CR</h1>
+			<img class="isometric-img" src="./assets/images/Search_SVG.svg" alt="" />
+			<div class="table-container">
+				<div>
+					<div class="filters"></div>
+					<table id="data" class="tg">
+						<thead>
+							<tr>
+								<th class="tg-0pky">Elementos</th>
+								<th class="tg-0pky">Display</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="tg-0pky">A</td>
+								<td class="tg-0pky"></td>
+							</tr>
+							<tr>
+								<td class="tg-0pky">AUDIO</td>
+								<td class="tg-0pky"></td>
+							</tr>
+							<tr>
+								<td class="tg-0pky">DIV</td>
+								<td class="tg-0pky"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+	</header>
+
+	<script src="./js/navbar.js"></script>
+</html>
