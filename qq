@@ -1,0 +1,48 @@
+[33m51a03f4[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m FEAT - Añadido fetch de datos general a la tabla de usuarios
+[33mc49f7ff[m FEAT - Estilos para tabla de usuarios
+[33mecda74a[m FIX - Estilos y estructura de index
+[33md01c46c[m FEAT - Inicio de vistas
+[33md6b50b2[m FIX - Traducción de vista URLS -GetMethod
+[33m4dd1215[m Merge branch 'master' of https://github.com/BDT-Group-Pasantias-2021/web_administrativa_backend
+[33m18e4315[m FIX - Accesos directos arreglados
+[33m0febca6[m FIX - Traduccion de noticeClass
+[33mac9a86b[m FEAT - Documentación dinámica
+[33m9cb0e5c[m Merge branch 'master' of https://github.com/BDT-Group-Pasantias-2021/web_administrativa_backend
+[33m57908f8[m FEAT - Documentacion de index.php
+[33m819a2fb[m Feat - Documentacion de la clase Usuario
+[33md26c7b8[m FEAT - Documentación de la clase notice
+[33m266b1a5[m FEAT - Documentando la clase commentClass para generar la documentacion
+[33m813f397[m FIX - Añadiendo searchUserById y searchUserByEmail
+[33m60e61e9[m FEAT - SP de SearchUserByPhone and  ByName
+[33md2bd0fe[m Feat - Añadida SP SearchUserByEmail & SearchUserById
+[33m7132b29[m FEAT - Añadido SP searchUserByDocument
+[33m4f9f625[m FIX - Ordenando el codigo en index.php
+[33m649fb6b[m FIX - Corrigiendo searhNotification a searchNotification
+[33ma34e1e5[m FIX - Implementacion URL GetAgeUser
+[33mda6463b[m FIX - Orden User Class
+[33m92bf919[m FIX - Cambio de aspecto
+[33m64f85e7[m FEAT - Añadidos estilos a la página index y output formateado
+[33m51030d1[m FEAT - Agregando SPs de searchCommentByAuthor y searchCommentByNotice
+[33m529ea92[m FIX - Correcion URl
+[33m0ab22bc[m FEAT - Añadido stored procedures searchUserByStatus()
+[33m00fa66d[m FIX - error de sintax
+[33m99cb22d[m FEAT - Añadida el SP textNoticeSearch
+[33m12603ab[m FEAT - Añadiendo funciones de la clase Comment
+[33m51c2529[m FEAT - Añadidos stored procedures de la clase notice y formateo de Markdown file
+[33m71a0b5d[m FEAT - Funciones changeTypeUser and changePassword
+[33mf68790d[m Feat- funcion getAgeUser
+[33m0572546[m FIX - funcio restrictNotice
+[33mdf47fc2[m Feat - Añadiendo funcion RestrictNotice
+[33madcdd54[m FEAT - Funcion insertUser con todos sus parametros
+[33me39bc30[m FEAT - Añadidas la función edit_notice_status y funciones optimizadas
+[33m112a4af[m FEAT - Añadido favicon
+[33mec78784[m FEAT - Añadida la función para editar noticias
+[33m9e38493[m FEAT - Añadiendo funcion createComment en la clase Comment
+[33mf393eb3[m FEAT - Añadida la función para eliminar noticias
+[33ma011688[m FEAT - Añadida la función para crear noticias
+[33mc2748b1[m Merge branch 'master' of https://github.com/BDT-Group-Pasantias-2021/web_administrativa_backend
+[33m7c42d1a[m FEAT - Incluida la clase de noticias
+[33mfb137f8[m Update urls
+[33md42d98a[m FEAT - passRecovery
+[33m855cb50[m Almacén para URLs - GetMethod
+[33mefcc76b[m FEAT - Primeros archivos

@@ -8,10 +8,9 @@
 		<link rel="stylesheet" href="css/index.css" />
 		<link rel="stylesheet" href="css/navbar.css" />
 		<link rel="stylesheet" href="./css/tabla.css" />
-		<!--Libreria tablas-->
-    <script>
-		let url =
-			"http://192.168.43.249/web_administrativa_backend/release/v1.0.0/?action=searchUserByStatus&searchDocumentUser=";
+	</head>
+	<script>
+		let url = "http://192.168.43.249/web_administrativa_backend/release/v1.0.0/?action=searchUserById&userId=";
 		fetch(url)
 			.then((response) => response.json())
 			.then((data) => mostrarData(data))
@@ -75,10 +74,10 @@
 		</body>
 	</header>
 	<script src="DataTables/jquery/jquery-3.3.1.min.js"></script>
-    <script src="DataTables/popper/popper.min.js"></script>
+	<script src="DataTables/popper/popper.min.js"></script>
 
-	<script type="text/javascript" src="DataTables/datatables.min.js"></script>    
+	<script type="text/javascript" src="DataTables/datatables.min.js"></script>
 	<script src="DataTables/appTables.js"></script>
-    
+
 	<script src="./js/navbar.js"></script>
 </html>
