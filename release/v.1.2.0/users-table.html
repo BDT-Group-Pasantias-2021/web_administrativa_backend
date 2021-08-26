@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="./css/tabla.css" />
 	</head>
 	<script>
-		let url = "https://jsonplaceholder.typicode.com/users";
+		let url = "http://192.168.43.249/web_administrativa_backend/release/v1.0.0/?action=searchUserById&userId=";
 		fetch(url)
 			.then((response) => response.json())
 			.then((data) => mostrarData(data))
