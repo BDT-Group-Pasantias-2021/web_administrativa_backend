@@ -22,7 +22,15 @@ body {
 		width: 95%;
 
 		.filters {
+			width: fit-content;
+			height: 60px;
 			@include displayFlex(row, center, center);
+			background-color: aqua;
+			margin-bottom: 20px;
+			border-radius: 5px;
+
+			.filter-box {
+			}
 		}
 
 		table {
@@ -57,6 +65,7 @@ body {
 				border-spacing: 0;
 				border-bottom: 1px solid #ddd;
 				text-align: center;
+				padding: 10px 15px !important;
 
 				td {
 					text-align: center;
@@ -87,11 +96,4 @@ body {
 			}
 		}
 	}
-}
-
-.tr {
-	display: flex;
-	flex-direction: ro;
-	justify-content: stretch;
-	text-align: center;
 }

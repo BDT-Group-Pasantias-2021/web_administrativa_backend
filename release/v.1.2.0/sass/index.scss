@@ -43,7 +43,16 @@ header {
 		color: $primary-color;
 		animation-delay: 300ms;
 		animation: shotup 600ms ease-in-out;
-		margin-bottom: 3rem;
+
+		span {
+			border-bottom: 2px $secondary-color solid;
+			z-index: 100;
+		}
+
+		i {
+			color: lightgrey;
+			z-index: 100;
+		}
 	}
 
 	.isometric-img {
@@ -51,6 +60,8 @@ header {
 		height: auto;
 		animation: shotup 600ms ease-in-out;
 		filter: drop-shadow(7px 6px 5px rgb(0 0 0 / 28%));
+		margin-top: 50px;
+		z-index: 100;
 	}
 
 	.table-container {
