@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/navbar.css" />
+		<link rel="stylesheet" href="./css/tabla.css" />
+	</head>
+	<script>
+		let url = "https://jsonplaceholder.typicode.com/users";
+		fetch(url)
+			.then((response) => response.json())
+			.then((data) => mostrarData(data))
+			.catch((error) => console.log(error));
+
+		const mostrarData = (data) => {
+			console.log(data);
+			let body = "";
+			body += `<thead>
+							<tr>
+								<th class="tg-0pky">ID</th>
+								<th class="tg-0pky">Nombre</th>
+								<th class="tg-0pky">Email</th>
+								<th class="tg-0pky">Telefono</th>
+								<th class="tg-0pky">Tipo de Documento</th>
+								<th class="tg-0pky">Documento</th>
+								<th class="tg-0pky">Nacimiento</th>
+								<th class="tg-0pky">Estado</th>
+							</tr>
+						</thead>`;
+			body += `<tbody>`;
+			for (let i = 0; i < data.length; i++) {
+				body += `<tr><td class="tg-0pky">${data[i].id}</td><td class="tg-0pky">${data[i].name}</td><td class="tg-0pky">${data[i].email}</td></tr>`;
+			}
+			body += `</tbody>`;
+			document.getElementById("data").innerHTML = body;
+		};
+	</script>
+
+	<header>
+		<div class="hamburger-icon" id="icon">
+			<div class="icon-1" id="a"></div>
+			<div class="icon-2" id="b"></div>
+			<div class="icon-3" id="c"></div>
+			<div class="clear"></div>
+		</div>
+
+		<nav id="nav">
+			<ul>
+				<li><a class="redirect" href="index.html">Inicio</a></li>
+				<li><a class="redirect" href="users-table.html">Usuarios</a></li>
+				<li><a class="redirect" href="#">Comentarios</a></li>
+				<li><a class="redirect" href="#">Noticias</a></li>
+			</ul>
+		</nav>
+		<div class="dark-blue" id="blue"></div>
+
+		<body>
+			<div class="table-container">
+				<div>
+					<div class="filters"></div>
+					<table id="data" class="tg"></table>
+				</div>
+			</div>
+		</body>
+	</header>
+
+	<script src="./js/navbar.js"></script>
+</html>

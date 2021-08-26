@@ -13,30 +13,56 @@ body {
 }
 
 .table-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .table-container div {
-  width: 70%;
+  width: 95%;
 }
-.table-container div .tg {
+.table-container div .filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.table-container div table {
   width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+.table-container div table thead {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.table-container div table thead tr th {
+  font-weight: 500;
+}
+.table-container div table tbody {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.table-container div table tbody tr td {
+  font-weight: 300;
+}
+.table-container div table .tg-0pky {
   border-collapse: collapse;
   border-spacing: 0;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
 }
-.table-container div .tg td {
-  border-color: black;
-  border-style: solid;
-  border-width: 1px;
+.table-container div table .tg-0pky td {
+  text-align: center;
   font-family: Arial, sans-serif;
   font-size: 14px;
   overflow: hidden;
   padding: 10px 5px;
   word-break: normal;
 }
-.table-container div .tg th {
+.table-container div table .tg-0pky th {
   border-color: black;
   border-style: solid;
   border-width: 1px;
@@ -47,10 +73,17 @@ body {
   padding: 10px 5px;
   word-break: normal;
 }
-.table-container div .tg .tg-0pky {
+.table-container div table .tg-0pky .tg-0pky {
   border-color: inherit;
-  text-align: left;
-  vertical-align: top;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tr {
+  display: flex;
+  flex-direction: ro;
+  justify-content: stretch;
+  text-align: center;
 }
 
 /*# sourceMappingURL=tabla.css.map */

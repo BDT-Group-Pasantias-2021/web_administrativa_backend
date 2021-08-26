@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 nav {
   background: #393e46;
   position: absolute;
@@ -23,6 +25,18 @@ nav ul li {
   line-height: 2.2;
   text-transform: uppercase;
   letter-spacing: 1.7px;
+  cursor: default;
+}
+nav ul li .redirect {
+  text-decoration: none;
+  color: #eeeeee;
+  margin: 15px;
+  border-radius: 35px;
+  transition: all 170ms ease-in-out;
+}
+nav ul li .redirect:hover {
+  color: #d65a31;
+  text-shadow: -2px 2px 0 #222831;
 }
 
 nav.show {
@@ -34,7 +48,7 @@ nav.show {
   position: absolute;
   top: 0;
   left: 0;
-  background: #64b5f6;
+  background-color: #d65a31;
   height: 100%;
   width: 0%;
   transition: all 500ms cubic-bezier(0.62, 0.04, 0.3, 1.8);
@@ -57,7 +71,7 @@ nav.show {
   width: 32px;
   height: 3px;
   background-color: black;
-  transition: all 400ms cubic-bezier(0.84, 0.06, 0.52, 1.8);
+  transition: all 500ms cubic-bezier(0.84, 0.06, 0.52, 1.8);
 }
 
 .icon-1 {
