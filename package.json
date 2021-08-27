@@ -1,7 +1,10 @@
 {
-  "dependencies": {
-    "node-fetch": "^2.6.1",
-    "sass": "^1.38.0",
-    "xmlhttprequest": "^1.8.0"
-  }
+	"scripts": {
+		"sass": "cd release/v.1.2.0 && sass --watch sass:css"
+	},
+	"dependencies": {
+		"node-fetch": "^2.6.1",
+		"sass": "^1.38.0",
+		"xmlhttprequest": "^1.8.0"
+	}
 }
