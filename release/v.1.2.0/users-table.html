@@ -10,18 +10,10 @@
 		<link rel="stylesheet" href="./css/tabla.css" />
 		<!--FONTAWESOME-->
 		<script src="https://kit.fontawesome.com/f17d5951be.js" crossorigin="anonymous"></script>
-		<script src="js/db-fetch.js"></script>
 		<!--<script src="./js/inputCategory.js"></script>-->
 	</head>
-
+	
 	<header>
-		<div class="hamburger-icon" id="icon">
-			<div class="icon-1" id="a"></div>
-			<div class="icon-2" id="b"></div>
-			<div class="icon-3" id="c"></div>
-			<div class="clear"></div>
-		</div>
-
 		<nav id="nav">
 			<ul>
 				<li><a class="redirect" href="index.html">Inicio</a></li>
@@ -31,11 +23,20 @@
 			</ul>
 		</nav>
 		<div class="dark-blue" id="blue"></div>
-		<body>
+	</header>
+	
+	<body>
+		<div class="grid-container">
 			<div class="data-display">
-				<div>
+				<div class="">
 					<form method="GET" class="filters">
-						<div>
+						<div class="hamburger-icon" id="icon">
+							<div class="icon-1" id="a"></div>
+							<div class="icon-2" id="b"></div>
+							<div class="icon-3" id="c"></div>
+							<div class="clear"></div>
+						</div>
+						<div class="filters-container">
 							<div class="filter-box first-filter">
 								<span>
 									<select class="input-text" name="user-category" id="user-category">
@@ -55,10 +56,12 @@
 								</span>
 								<button type="button" id="search-data"><i class="fas fa-search"></i></button>
 							</div>
+							<div class="register-container">
+							<div class="filter-box new-register" id="new-register-btn" onclick="activeModal(null)">
+								<h3>Añadir usuario</h3>
+								<i class="fas fa-plus"></i>
+							</div>
 						</div>
-						<div class="filter-box new-register">
-							<h3>Añadir usuario</h3>
-							<i class="fas fa-plus"></i>
 						</div>
 					</form>
 					<div class="table-content">
@@ -66,10 +69,20 @@
 					</div>
 				</div>
 			</div>
-			<img class="bottom-wave" src="./assets/images/wavesOpacity.svg" alt="" />
-		</body>
-	</header>
+			
+			<!-- <img class="bottom-wave" src="./assets/images/wavesOpacity.svg" alt="" /> -->
+			<div class="container-waves">
+				<div class="wave w1"></div>
+				<div class="wave w2"></div>
+				<div class="wave w3"></div>
+			</div>
+		</div>
+	</body>
+	<div class="modal-container" id="modal"></div>
 	
-
+	
+	<script src="./js/db-fetch.js"></script>
 	<script src="./js/navbar.js"></script>
-</html>
+	<script src="./js/table-config.js"></script>
+	</html>
+	

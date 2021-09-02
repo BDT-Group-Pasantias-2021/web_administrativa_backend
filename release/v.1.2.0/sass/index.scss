@@ -9,12 +9,8 @@
 	font-family: "Poppins", sans-serif;
 }
 
-header {
-	width: 100%;
-	height: 100%;
+body {
 	background: $background;
-	position: absolute;
-	overflow: auto;
 }
 
 @keyframes shotup {
@@ -28,40 +24,67 @@ header {
 	}
 }
 
+body {
+	display: flex;
+	justify-content: flex-start !important;
+	align-items: center;
+}
+
 .main-content {
-	position: absolute;
-	top: 34%;
-	left: 46%;
-	right: 5%;
-	width: 100%;
-	transform: translate(-50%, -50%);
-	text-align: center;
 	@include displayFlex(column, center, flex-end);
+	width: 100%;
+	margin-top: 40px;
+	text-align: center;
+	padding-right: 40px;
 
-	h1 {
-		font-size: 40px;
-		color: $primary-color;
-		animation-delay: 300ms;
-		animation: shotup 600ms ease-in-out;
+	.title-hero {
+		@include displayFlex(row, space-between, flex-end);
+		width: 100%;
 
-		span {
-			border-bottom: 2px $secondary-color solid;
-			z-index: 100;
-		}
+		h1 {
+			font-size: 40px;
+			color: $primary-color;
+			animation-delay: 300ms;
+			animation: shotup 600ms ease-in-out;
 
-		i {
-			color: lightgrey;
-			z-index: 100;
+			span {
+				border-bottom: 2px $secondary-color solid;
+				z-index: 100;
+			}
+
+			i {
+				color: lightgrey;
+				z-index: 100;
+			}
 		}
 	}
 
 	.isometric-img {
+		padding-top: 75px;
 		width: 300px;
 		height: auto;
 		animation: shotup 600ms ease-in-out;
 		filter: drop-shadow(7px 6px 5px rgb(0 0 0 / 28%));
 		margin-top: 50px;
 		z-index: 100;
+		animation: move_vector 4s ease-in-out infinite;
+
+		&:hover {
+			animation: move_vector 0.1s ease-in-out infinite;
+			filter: blur(2px);
+		}
+	}
+
+	@keyframes move_vector {
+		0% {
+			transform: translateY(15px);
+		}
+		50% {
+			transform: translateY(-15px);
+		}
+		100% {
+			transform: translateY(15px);
+		}
 	}
 
 	.table-container {

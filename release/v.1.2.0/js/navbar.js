@@ -17,6 +17,7 @@ window.onkeydown = presionar_tecla;
 icon.addEventListener("click", () => {
 	estilos();
 });
+
 function estilos() {
 	icon1.classList.toggle("a");
 	icon2.classList.toggle("c");

@@ -49,6 +49,9 @@ function triggerData(action, data) {
 		case "insertUser":
 			insertUser(data);
 			break;
+		case "editUser":
+			editUser(data);
+			break;
 		case "restrictNotice":
 			restrictNotice(data);
 			break;
@@ -164,6 +167,63 @@ function searchUserByDocument(data) {
 	reloadQuery(newUrl);
 }
 
+//Terminar función
+/* const editUser = (e) => {
+}; */
+
+function editUser(userId) {
+	let nombreModal = document.getElementById("nombreModal").value;
+	console.log(nombreModal.value);
+	let emailModal = document.getElementById("emailModal").value;
+	console.log(emailModal.value);
+	let numeroModal = document.getElementById("numeroModal").value;
+	console.log(numeroModal.value);
+	let tipoDocModal = document.getElementById("tipoDocModal").value;
+	console.log(tipoDocModal.value);
+	let docModal = document.getElementById("documentoModal").value;
+	console.log(docModal.value);
+	let tipoUserModal = document.getElementById("tipoUsuarioModal").value;
+	console.log(tipoUserModal.value);
+	let fechaNacModal = document.getElementById("fechaNacimientoModal").value;
+	console.log(fechaNacimientoModal.value);
+	let passwordModal = document.getElementById("passwordModal").value;
+	console.log(passwordModal.value);
+	let confirmarPasswordModal = document.getElementById("confirmarPasswordModal").value;
+	console.log(confirmarPasswordModal.value);
+	editUserData(nombreModal, emailModal, tipoDocModal, docModal, fechaNacModal, numeroModal, userId);
+	//data.pop();
+	//reloadQuery(newUrl);
+}
+
+function editUserData(name, email, typeDoc, userDoc, fechaNac, phoneUser, id) {
+	let newUrl =
+		targetUrl +
+		"?action=editUser&name=" +
+		name +
+		"&email=" +
+		email +
+		"&typeDocument=" +
+		typeDoc +
+		"&documentUser=" +
+		userDoc +
+		"&fechaNac=" +
+		fechaNac +
+		"&phoneUser=" +
+		phoneUser +
+		"&id=" +
+		id;
+	console.log(newUrl);
+	reloadUpdates(newUrl);
+}
+
+//Probar una vez estén subidos los archivos al sv
+function deleteUser(userID) {
+	let id = userID.substr(1, userID.length - 1);
+	let newUrl = targetUrl + "?action=deleteUser&id=" + id + "&authorId=" + id;
+	console.log(newUrl);
+	//reloadQuery(newUrl);
+}
+
 //😎
 function commentData(action, data) {}
 
@@ -192,41 +252,58 @@ const mostrarData = (data) => {
                 </thead>`;
 	body += `<tbody>`;
 	for (let i = 0; i < data.length; i++) {
-		body += `<tr><td class="tg-0pky">${data[i].ID}</td><td class="tg-0pky">${data[i].Nombre}</td><td class="tg-0pky">${data[i].Email}</td>
-            <td class="tg-0pky">${data[i].Telefono}</td><td class="tg-0pky">${data[i]["Tipo de Documento"]}</td><td class="tg-0pky">${data[i].Documento}</td>
+		body += `<tr><td class="tg-0pky">${data[i].ID}</td><td class="tg-0pky">${
+			data[i].Nombre
+		}</td><td class="tg-0pky">${data[i].Email}</td>
+            <td class="tg-0pky">${data[i].Telefono}</td><td class="tg-0pky">${
+			data[i]["Tipo de Documento"]
+		}</td><td class="tg-0pky">${data[i].Documento}</td>
             <td class="tg-0pky">${data[i].Nacimiento}</td>
-			<td class="tg-0pky">${data[i].Estado}</td><td class="tg-0pky"><i onclick="changeTypeUser('${data[i].Email}')" class="fas fa-marker table-icon-modify"></i></td>
-			<td class="tg-0pky"><i class="fas fa-eraser table-icon-delete"></i></td>
-			<td class="tg-0pky"><i onclick="changePass('${data[i].Email}')"class="far fa-id-card"></i></td></tr>`;
+			<td class="tg-0pky">${data[i].Estado}</td><td class="tg-0pky"><i onclick="activeModal(${data[i].ID.replace(
+			"#",
+			""
+		)})" class="fas fa-marker table-icon-modify"></i></td>
+			<td class="tg-0pky"><i class="fas fa-eraser table-icon-delete" onclick="deleteUser('${data[i].ID}')"></i></td>
+			<td class="tg-0pky"><i class="far fa-id-card" onclick="changePass('${data[i].Email}')"></i></td></tr>`;
 	}
 	body += `</tbody>`;
 	document.getElementById("data").innerHTML = body;
 };
 
-function changePass(email){
+function changePass(email) {
 	//AGREGAR MODAL PARA INPUTS
 	let oldPass = prompt("Ingrese su anterior contraseña: ");
 	let newPass = prompt("Ingrese su nueva contraseña: ");
 	let RePass = prompt("Repitala: ");
-	let newUrl = targetUrl + "?action=changePassword&email="+ (email) +"&password="+(oldPass)+"&confirmPassword="+(newPass)+"&newConfirmPassword="+(RePass);            
+	let newUrl =
+		targetUrl +
+		"?action=changePassword&email=" +
+		email +
+		"&password=" +
+		oldPass +
+		"&confirmPassword=" +
+		newPass +
+		"&newConfirmPassword=" +
+		RePass;
 	reloadUpdates(newUrl);
 }
-function changeTypeUser(email){
+
+function changeTypeUser(email) {
 	let pass = prompt("Ingrese su contraseña: ");
 	//Option de usuarios que devuelva values en ints pero que muestre en las opciones los respectivos tipos de usuario disponibles.
 	let typeUser = prompt("Ingrese tipo de usuario: ");
-	let newUrl = targetUrl + "?action=changeTypeUser&email="+(email)+"&typeUser="+(typeUser)+"&password="+(pass);
+	let newUrl = targetUrl + "?action=changeTypeUser&email=" + email + "&typeUser=" + typeUser + "&password=" + pass;
 	reloadUpdates(newUrl);
 }
-function reloadUpdates(reloadUrl) {
 
+function reloadUpdates(reloadUrl) {
 	console.log(reloadUrl);
 	fetch(reloadUrl)
 		.then((response) => response.json())
 		.then((data) => modalData(data))
 		.catch((error) => console.log(error));
 }
-function modalData(data){
+function modalData(data) {
 	//AGREGAR MODAL PARA MENSAJES DE RTA
 	alert(data[0].Message);
 }
