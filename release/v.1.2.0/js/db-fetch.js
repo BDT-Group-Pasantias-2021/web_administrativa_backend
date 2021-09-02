@@ -194,9 +194,33 @@ const mostrarData = (data) => {
 	for (let i = 0; i < data.length; i++) {
 		body += `<tr><td class="tg-0pky">${data[i].ID}</td><td class="tg-0pky">${data[i].Nombre}</td><td class="tg-0pky">${data[i].Email}</td>
             <td class="tg-0pky">${data[i].Telefono}</td><td class="tg-0pky">${data[i]["Tipo de Documento"]}</td><td class="tg-0pky">${data[i].Documento}</td>
-            <td class="tg-0pky">${data[i].Nacimiento}</td><td class="tg-0pky">${data[i].Estado}</td><td class="tg-0pky"><i class="fas fa-marker table-icon-modify"></i></td>
-			<td class="tg-0pky"><i class="fas fa-eraser table-icon-delete"></i></td></tr>`;
+            <td class="tg-0pky">${data[i].Nacimiento}</td>
+			<td class="tg-0pky">${data[i].Estado}</td><td class="tg-0pky"><i onclick="changePass('${data[i].Email}')" class="fas fa-marker table-icon-modify"></i></td>
+			<td class="tg-0pky"><i class="fas fa-eraser table-icon-delete"></i></td>
+			<td class="tg-0pky"><i onclick="changePass('${data[i].Email}')"class="far fa-id-card"></i></td></tr>`;
 	}
 	body += `</tbody>`;
 	document.getElementById("data").innerHTML = body;
 };
+
+function changePass(email){
+	//AGREGAR MODAL PARA INPUTS
+	let oldPass = prompt("Ingrese su anterior contraseña: ");
+	let newPass = prompt("Ingrese su nueva contraseña: ");
+	let RePass = prompt("Repitala: ");
+	let newUrl = targetUrl + "?action=changePassword&email="+ (email) +"&password="+(oldPass)+"&confirmPassword="+(newPass)+"&newConfirmPassword="+(RePass);            
+	reloadUpdates(newUrl);
+}
+
+function reloadUpdates(reloadUrl) {
+
+	console.log(reloadUrl);
+	fetch(reloadUrl)
+		.then((response) => response.json())
+		.then((data) => modalData(data))
+		.catch((error) => console.log(error));
+}
+function modalData(data){
+	//AGREGAR MODAL PARA MENSAJES DE RTA
+	alert(data[0].Message);
+}
