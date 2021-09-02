@@ -195,7 +195,7 @@ const mostrarData = (data) => {
 		body += `<tr><td class="tg-0pky">${data[i].ID}</td><td class="tg-0pky">${data[i].Nombre}</td><td class="tg-0pky">${data[i].Email}</td>
             <td class="tg-0pky">${data[i].Telefono}</td><td class="tg-0pky">${data[i]["Tipo de Documento"]}</td><td class="tg-0pky">${data[i].Documento}</td>
             <td class="tg-0pky">${data[i].Nacimiento}</td>
-			<td class="tg-0pky">${data[i].Estado}</td><td class="tg-0pky"><i onclick="changePass('${data[i].Email}')" class="fas fa-marker table-icon-modify"></i></td>
+			<td class="tg-0pky">${data[i].Estado}</td><td class="tg-0pky"><i onclick="changeTypeUser('${data[i].Email}')" class="fas fa-marker table-icon-modify"></i></td>
 			<td class="tg-0pky"><i class="fas fa-eraser table-icon-delete"></i></td>
 			<td class="tg-0pky"><i onclick="changePass('${data[i].Email}')"class="far fa-id-card"></i></td></tr>`;
 	}
@@ -211,7 +211,13 @@ function changePass(email){
 	let newUrl = targetUrl + "?action=changePassword&email="+ (email) +"&password="+(oldPass)+"&confirmPassword="+(newPass)+"&newConfirmPassword="+(RePass);            
 	reloadUpdates(newUrl);
 }
-
+function changeTypeUser(email){
+	let pass = prompt("Ingrese su contraseña: ");
+	//Option de usuarios que devuelva values en ints pero que muestre en las opciones los respectivos tipos de usuario disponibles.
+	let typeUser = prompt("Ingrese tipo de usuario: ");
+	let newUrl = targetUrl + "?action=changeTypeUser&email="+(email)+"&typeUser="+(typeUser)+"&password="+(pass);
+	reloadUpdates(newUrl);
+}
 function reloadUpdates(reloadUrl) {
 
 	console.log(reloadUrl);
