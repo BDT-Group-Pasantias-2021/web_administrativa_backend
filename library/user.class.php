@@ -88,7 +88,7 @@
          * @return void
          */
 
-        public function __construct($id = 0, $email = "", $password = "", $name = "", $typeDocument = 0, $documentUser = 0, $fechaNac = "", $phoneUser = 0, $typeUser = 0, $confirmPassword = "", $newConfirmPassword = ""){
+        public function __construct($id = 0, $email = "", $password = "", $name = "", $typeDocument = 0, $documentUser = 0, $fechaNac = "", $phoneUser = 0, $typeUser = 0, $confirmPassword = "", $newConfirmPassword = "", $authorId = 0){
             $this->id = $id;
             $this->email = $email;
             $this->password = $password;
@@ -100,6 +100,7 @@
             $this->typeUser = $typeUser;
             $this->confirmPassword = $confirmPassword;
             $this->newConfirmPassword = $newConfirmPassword;
+            $this->authorId = $authorId;
         }
         
         
@@ -136,6 +137,31 @@
         public function insertUser(){
             $dbc = new PDOClass();
             return $dbc-> getQuery("SELECT insert_user('".$this->name."', '".$this->email."', ".$this->typeDocument.", '".$this->documentUser."', '".$this->fechaNac."', ".$this->phoneUser.", ".$this->typeUser.", '".$this->password."', '".$this->confirmPassword."') AS `Message`;");
+        }
+
+        
+        /**
+         * editUser se encarga de realizar el llamado a la función editUser
+         * la cual se encuentra ubicada en la base de datos 
+         *
+         * @return String Mensaje que devuelve si el procedimiento se pudo completar correctamente
+         */
+        public function editUser(){
+            $dbc = new PDOClass();
+            return $dbc-> getQuery("SELECT edit_user('".$this->name."', '".$this->email."', ".$this->typeDocument.", '".$this->documentUser."', '".$this->fechaNac."', ".$this->phoneUser.", '.$this->id.') AS `Message`;");
+        }
+
+
+        
+        /**
+         * deleteUser se encarga de realizar el llamado a la función deleteUser
+         * la cual se encuentra ubicada en la base de datos 
+         *
+         * @return String Mensaje que aporta informacion acerca del acceso que se obtiene a ciertas noticias
+         */
+        public function deleteUser(){
+            $dbc = new PDOClass();
+            return $dbc->getQuery("SELECT delete_user('".$this->id."', ".$this->authorId.") AS `Message`;");
         }
 
         /**

@@ -1,6 +1,6 @@
 <?php
     
-    error_reporting(0);
+    //error_reporting(0);
 
     $baseUrl = "../../";
     include_once $baseUrl.'include/headerConfig.php';
@@ -28,7 +28,7 @@
          * @return void
          */
         function getRankUser($dataGet){
-            $actionClass = new userClass( 0,$dataGet['email'], $dataGet['password'], "",0,"", "","", 0, "", "");
+            $actionClass = new userClass( 0,$dataGet['email'], $dataGet['password'], "",0,"", "","", 0, "", "", 0);
             return $actionClass->getRankUser();
         }
 
@@ -40,7 +40,7 @@
          * @return void
          */
         function passRecovery($dataGet){
-            $actionClass = new userClass( 0,$dataGet['email'], "", "",0,"", "","", 0, "", "");
+            $actionClass = new userClass( 0,$dataGet['email'], "", "",0,"", "","", 0, "", "", 0);
             return $actionClass->passRecovery();
         }
 
@@ -52,8 +52,32 @@
          * @return void
          */
         function insertUser($dataGet){
-            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], $dataGet['name'], $dataGet['typeDocument'], $dataGet['documentUser'], $dataGet['fechaNac'], $dataGet['phoneUser'], $dataGet['typeUser'], $dataGet['confirmPassword'],"");
+            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], $dataGet['name'], $dataGet['typeDocument'], $dataGet['documentUser'], $dataGet['fechaNac'], $dataGet['phoneUser'], $dataGet['typeUser'], $dataGet['confirmPassword'],"", 0);
             return $actionClass->insertUser();
+        }
+
+        /**
+         * Ejecuta la función editUser de la clase userClass con los parámetros pertinentes.
+         *
+         * @param  array[] $dataGet Array de parámetros recibidos por el método $_GET 
+         * @see user.class.php::editUser()
+         * @return void
+         */
+        function editUser($dataGet){
+            $actionClass = new userClass( $dataGet['id'], $dataGet['email'], "", $dataGet['name'], $dataGet['typeDocument'], $dataGet['documentUser'], $dataGet['fechaNac'], $dataGet['phoneUser'], 0, "", "", 0);
+            return $actionClass->editUser();
+        }
+
+        /**
+         * Ejecuta la función deleteUser de la clase userClass con los parámetros pertinentes.
+         *
+         * @param  array[] $dataGet Array de parámetros recibidos por el método $_GET 
+         * @see user.class.php::deleteUser()
+         * @return void
+         */
+        function deleteUser($dataGet){
+            $actionClass = new userClass( $dataGet['id'],"", "", "",0,"", "","", 0, "","", $dataGet['authorId']);
+            return $actionClass->deleteUser();
         }
 
         /**
@@ -64,7 +88,7 @@
          * @return void
          */
         function restrictNotice($dataGet){
-            $actionClass = new userClass( $dataGet['id'],"", "", "",0,"", "","", 0, "","");
+            $actionClass = new userClass( $dataGet['id'],"", "", "",0,"", "","", 0, "","", 0);
             return $actionClass->restrictNotice();
         }
 
@@ -76,7 +100,7 @@
          * @return void
          */
         function getAgeUser($dataGet){
-            $actionClass = new userClass( $dataGet['id'],"", "", "",0,"", "","", 0, "","");
+            $actionClass = new userClass( $dataGet['id'],"", "", "",0,"", "","", 0, "","", 0);
             return $actionClass->getAgeUser();
         }
 
@@ -88,7 +112,7 @@
          * @return void
          */
         function changeTypeUser($dataGet){
-            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], "", 0, 0, "", 0, $dataGet['typeUser'], "", "");
+            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], "", 0, 0, "", 0, $dataGet['typeUser'], "", "", 0);
             return $actionClass->changeTypeUser();
         }
         
@@ -100,7 +124,7 @@
          * @return void
          */
         function changePassword($dataGet){
-            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], "", 0, 0, "", 0, 0, $dataGet['confirmPassword'],$dataGet['newConfirmPassword']);
+            $actionClass = new userClass( 0, $dataGet['email'], $dataGet['password'], "", 0, 0, "", 0, 0, $dataGet['confirmPassword'],$dataGet['newConfirmPassword'], 0);
             return $actionClass->changePassword();
         }
 
@@ -114,7 +138,7 @@
          * @return void
          */
         function searchUserByStatus($dataGet){
-            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","", 0);
             return $actionClass->searchUserByStatus($dataGet['userStatus']);
         }
         
@@ -126,7 +150,7 @@
          * @return void
          */
         function searchUserById($dataGet){
-            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","", 0);
             return $actionClass->searchUserById($dataGet['userId']);
         }
 
@@ -138,7 +162,7 @@
          * @return void
          */
         function searchUserByEmail($dataGet){
-            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","", 0);
             return $actionClass->searchUserByEmail($dataGet['userEmail']);
         }
 
@@ -150,7 +174,7 @@
          * @return void
          */
         function searchUserByPhone($dataGet){
-            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","", 0);
             return $actionClass->searchUserByPhone($dataGet['userPhone']);
         }
         
@@ -162,7 +186,7 @@
          * @return void
          */
         function searchUserByName($dateGet){
-            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","");
+            $actionClass = new userClass(0,"","","",0,0,"",0,0,"","", 0);
             return $actionClass->searchUserByName($dataGet['userName']);
         }
 
@@ -174,7 +198,7 @@
          * @return void
          */
         function searchUserByDocument($dataGet){
-            $actionClass = new userClass( 0, "", "", "", 0, 0, "", 0, 0, "", "");
+            $actionClass = new userClass( 0, "", "", "", 0, 0, "", 0, 0, "", "", 0);
             return $actionClass->searchUserByDocument($dataGet['searchDocumentUser']);
         }
 
@@ -378,6 +402,12 @@
             break;
         case "insertUser":
             $dataReturn = $searchAction->insertUser($dataGet);
+            break;
+        case "editUser":
+            $dataReturn = $searchAction->editUser($dataGet);
+            break;
+        case "deleteUser":
+            $dataReturn = $searchAction->deleteUser($dataGet);
             break;
         case "restrictNotice":
             $dataReturn = $searchAction->restrictNotice($dataGet);

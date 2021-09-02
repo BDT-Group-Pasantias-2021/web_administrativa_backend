@@ -15,7 +15,7 @@ window.onload = () => {
 		if (parameter.value != null && parameter.value != "") {
 			if (query.value != null && query.value != "") {
 				data.push(parameter.value);
-				console.log(data);
+				console.log(data + "ddd");
 				triggerData(query.value, data);
 			} else {
 				alert("Ingrese una acción a realizar");

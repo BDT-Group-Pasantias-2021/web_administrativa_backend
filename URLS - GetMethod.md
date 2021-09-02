@@ -1,14 +1,16 @@
 ## User Class
 
-| Function       | URL                                                                                                                  |
-| -------------- | -------------------------------------------------------------------------------------------------------------------- |
-| getRankUser    | ?action=getRankUser&email=&password=                                                                                 |
-| passRecovery   | ?action=passRecovery&email=                                                                                          |
-| insertUser     | ?action=insertUser&name=&email=&typeDocument=&documentUser=&fechaNac=&phoneUser=&typeUser=password=&confirmPassword= |
-| restrictNotice | ?action=restrictNotice&id=                                                                                           |
-| changeTypeUser | ?action=changeTypeUser&email=&typeUser=&password=                                                                    |
-| changePassword | ?action=changePassword&email=&password=&confirmPassword=&newConfirmPassword=                                         |
-| getAgeUser     | ?action=getAgeUser&id=                                                                                               |
+| Function       | URL                                                                                                                   |
+| -------------- | --------------------------------------------------------------------------------------------------------------------  |
+| getRankUser    | ?action=getRankUser&email=&password=                                                                                  |
+| passRecovery   | ?action=passRecovery&email=                                                                                           |
+| insertUser     | ?action=insertUser&name=&email=&typeDocument=&documentUser=&fechaNac=&phoneUser=&typeUser=&password=&confirmPassword= |
+| editUser       | ?action=editUser&name=&email=&typeDocument=&documentUser=&fechaNac=&phoneUser=&id=                                    |
+| deleteUser     | ?action=deleteUser&id=&authorId=                                                                                      | 
+| restrictNotice | ?action=restrictNotice&id=                                                                                            |
+| changeTypeUser | ?action=changeTypeUser&email=&typeUser=&password=                                                                     |
+| changePassword | ?action=changePassword&email=&password=&confirmPassword=&newConfirmPassword=                                          | 
+| getAgeUser     | ?action=getAgeUser&id=                                                                                                |
 
 | Stored Procedure     | URL                                            |
 | -------------------- | ---------------------------------------------- |
